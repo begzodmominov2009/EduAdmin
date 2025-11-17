@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgba(245, 245, 245, 0.355);
+        }
+    </style>
+</head>
+
+<body class="dark">
+
+    <header class="fixed bg-white dark:bg-gray-800 z-1 top-0 w-full pt-[10px]">
+        <div id=""
+            class="flex items-center justify-between pl-[330px] border-t-[1px] dark:border-gray-700 px-[20px] py-[18px] border-gray-200 border-b-[1px]">
+            <h1 class="text-[24px] font-bold text-gray-900 dark:text-white">School Management System</h1>
+            <button id="button" class="bg-[whitesmoke] cursor-pointer p-[2.5px] rounded-[50%]">
+                <img src="../assets/header/moon_stars_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+            </button>
+        </div>
+    </header>
+
+    <aside class="w-[300px] bg-white dark:bg-gray-800 h-full fixed top-0 z-1 border-r-[1px] border-gray-200">
+        <div
+            class="flex items-center justify-between mt-[10.2px] border-t-[1px] border-b-[1px] py-[20px] border-gray-200  px-[20px]">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-graduation-cap h-5 w-5 text-white" aria-hidden="true">
+                        <path
+                            d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+                        </path>
+                        <path d="M22 10v6"></path>
+                        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                    </svg>
+                </div>
+                <span class="text-gray-900 dark:text-white">EduAdmin</span>
+            </div>
+            <button class="group cursor-pointer hover:bg-gray-200 cursor-pointer p-2 rounded-lg"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chevron-left h-4 w-4" aria-hidden="true">
+                    <path d="m15 18-6-6 6-6"></path>
+                </svg></button>
+        </div>
+        <div class="px-[20px] mt-[15px] flex flex-col gap-[12px]">
+            <a href="../index.html"
+                class="flex items-center gap-2 group dark:shadow-blue-500/30 hover:bg-gray-100 shadow-sm rounded-lg py-3 px-4 duration-400 cursor-pointer">
+                <svg class="xmlns=" http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-layout-dashboard h-5 w-5 flex-shrink-0" aria-hidden="true">
+                    <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                    <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                    <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                    <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                </svg>
+
+                <span class="">Dashboard</span>
+            </a>
+            <a href="./teachers.html"
+                class="flex items-center dark:shadow-blue-500/30 gap-2 group hover:bg-gray-100 shadow-sm rounded-lg py-3 px-4 duration-400 cursor-pointer">
+                <svg class="" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                    fill="#00000">
+                    <path
+                        d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z" />
+                </svg>
+                <span class="">Teachers</span>
+            </a>
+            <a href="./teachers.html"
+                class="flex items-center gap-2 group dark:shadow-blue-500/30 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg py-3 px-4 duration-400 cursor-pointer">
+                <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-graduation-cap h-5 w-5 flex-shrink-0" aria-hidden="true">
+                    <path
+                        d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+                    </path>
+                    <path d="M22 10v6"></path>
+                    <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                </svg>
+                <span class="text-[white]">Students</span>
+            </a>
+
+            <a href="./settings.html"
+                class="flex items-center dark:shadow-blue-500/30 gap-2 group hover:bg-gray-100 shadow-sm rounded-lg py-3 px-4 duration-400 cursor-pointer">
+                <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-settings h-5 w-5 flex-shrink-0" aria-hidden="true">
+                    <path
+                        d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915">
+                    </path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span class="">Settings</span>
+            </a>
+        </div>
+    </aside>
+
+    <main>
+        <div class="pl-[330px] pt-[120px] px-[20px]">
+            <h2 class="text-gray-900 text-[20px] font-bold dark:text-white mb-2">Students</h2>
+            <div class="flex items-center justify-between">
+                <p class="text-gray-600 text-[18px] dark:text-gray-400">Showing 80 of 80 students</p>
+                <button
+                    class="w-35 py-2 text-white text-[18px] bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center cursor-pointer">
+                    + Add Students
+                </button>
+            </div>
+        </div>
+        <div class="w-full pl-[330px] px-[20px] relative mt-[40px] ">
+            <input id="search-teacher"
+                class="border-[1px] w-full  border-gray-200 rounded-lg py-1 outline-none  px-7 h-9"
+                placeholder="Search student by name or email..." type="search">
+            <svg class="absolute top-2 left-[335px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-search absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400"
+                aria-hidden="true">
+                <path d="m21 21-4.34-4.34"></path>
+                <circle cx="11" cy="11" r="8"></circle>
+            </svg>
+        </div>
+        <div class="pl-[330px] px-[20px] flex items-center gap-5 mt-[20px]">
+            <select
+                class="gener-select bg-[white] rounded-lg w-40 border-1 border-gray-200 py-2 cursor-pointer px-2 outline-none">
+                <option class="option:hover" value="All Gener">All Gener</option>
+                <option class="option:hover" value="Male">Male</option>
+                <option class="option:hover" value="Female">Female</option>
+            </select>
+            <select class="bg-[white] rounded-lg w-40 border-1 border-gray-200 py-2 cursor-pointer px-2 outline-none">
+                <option class="option:hover" value="All Gener">All Age</option>
+                <option class="option:hover" value="0-5 years">6-10 years</option>
+                <option class="option:hover" value="6-10 years">11-14 years</option>
+                <option class="option:hover" value="11-20 years">15-18 years</option>
+            </select>
+            <select class="bg-[white] rounded-lg w-40 border-1 border-gray-200 py-2 cursor-pointer px-2 outline-none">
+                <option class="option:hover" value="All Gener">All Grade</option>
+                <option class="option:hover" value="4.5+ stars">Grade 1-4</option>
+                <option class="option:hover" value="4.0+ stars">Grade 5-8</option>
+                <option class="option:hover" value="3.5+ stars">Grade 8-12</option>
+            </select>
+            <select class="bg-[white] rounded-lg w-40 border-1 border-gray-200 py-2 cursor-pointer px-2 outline-none">
+                <option class="option:hover" value="All Gener">All Rating</option>
+                <option class="option:hover" value="4.5+ stars">4.5+ stars</option>
+                <option class="option:hover" value="4.0+ stars">4.0+ stars</option>
+                <option class="option:hover" value="3.5+ stars">3.0+ stars</option>
+            </select>
+
+        </div>
+        <div class="all-card cursor-pointer  pl-[330px] px-[20px] grid grid-cols-4 gap-6 mt-[30px] pb-20">
+
+        </div>
+    </main>
+
+
+
+
+    <script src="../card-data/card-data.js"></script>
+    <script src="../Js/main.js"></script>
+</body>
+
+</html>
