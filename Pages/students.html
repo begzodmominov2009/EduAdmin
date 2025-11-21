@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.tailwindcss.com" rel="stylesheet">
     <style>
@@ -107,7 +108,7 @@
         <div class="pl-[330px] pt-[120px] px-[20px]">
             <h2 class="text-gray-900 text-[20px] font-bold dark:text-white mb-2">Students</h2>
             <div class="flex items-center justify-between">
-                <p class="text-gray-600 text-[18px] dark:text-gray-400">Showing 80 of 80 students</p>
+                <p class="text-gray-600 text-[18px] dark:text-gray-400">Showing <span id="students-number">0</span> of 80 students</p>
                 <button
                     class="w-35 py-2 text-white text-[18px] bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center cursor-pointer">
                     + Add Students
@@ -154,16 +155,14 @@
             </select>
 
         </div>
-        <div class="all-card cursor-pointer  pl-[330px] px-[20px] grid grid-cols-4 gap-6 mt-[30px] pb-20">
-
+        <div class="students-card cursor-pointer  pl-[330px] px-[20px] grid grid-cols-4 gap-6 mt-[30px] pb-20">
+            
         </div>
     </main>
 
 
 
-
-    <script src="../card-data/card-data.js"></script>
-    <script src="../Js/main.js"></script>
+    <script src="../Js/students.js"></script>
 </body>
 
 </html>
