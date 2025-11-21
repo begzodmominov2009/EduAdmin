@@ -14,7 +14,7 @@
 
      <header class="fixed bg-white dark:bg-gray-800 z-1 top-0 w-full">
         <div id="header"  
-            class="flex  items-center justify-between pl-[290px] border-t-[1px] dark:border-gray-600 px-[20px] py-[18px] border-gray-200 border-b-[1px]">
+            class="flex  items-center justify-between pl-[290px] border-t-[1px] dark:border-gray-600 px-[20px] py-[18px] border-gray-200 dark:border-gray-600 border-b-[1px]">
             <h1 class=" text-[20px] sm:text-[24px] font-bold text-gray-900 dark:text-white">School Management System</h1>
             <button id="button"  class="bg-[whitesmoke] cursor-pointer p-[2.5px] rounded-[50%]">
                 <img src="./assets/header/moon_stars_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
@@ -22,9 +22,9 @@
         </div>
     </header> 
 
-    <aside id="aside" class="w-[260px] bg-white dark:bg-gray-800 h-full fixed top-0 z-1 border-r-[1px] border-gray-200 dark:border-gray-600">
+    <aside id="aside" class="w-[260px] bg-white dark:bg-gray-800 h-full fixed top-0 z-1 border-r-[1px] border-gray-200 dark:border-gray-600 dark:border-gray-600">
         <div
-            class="flex items-center justify-between border-t-[1px] border-b-[1px] py-[20px] border-gray-200  px-[20px]">
+            class="flex items-center justify-between border-t-[1px] border-b-[1px] py-[20px] border-gray-200 dark:border-gray-600 dark:border-gray-600  px-[20px]">
             <div class="aside-content flex items-center gap-2">
                 <div
                     class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center cursor-pointer">
@@ -124,7 +124,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pr-[20px] mt-[40px] gap-6">
                 <div
-                    class="flex items-center justify-between gap-[18px] group hover:shadow-lg py-5  p-6 bg-[white] dark:bg-gray-800 border-[1px] border-gray-200 cursor-pointer  w-full  rounded-lg">
+                    class="flex items-center justify-between gap-[18px] group hover:shadow-lg py-5  p-6 bg-[white] dark:bg-gray-800 border-[1px] border-gray-200 dark:border-gray-600 cursor-pointer  w-full  rounded-lg">
                     <div>
                         <h1 class="text-gray-600 dark:text-white">Total Teachers</h1>
                         <h1 class="text-gray-600 dark:text-white"><span id="total-teachers">0</span></h1>
@@ -141,7 +141,7 @@
                     </div>
                 </div>
                 <div
-                    class="flex items-center justify-between gap-[18px] dark:bg-gray-800 group hover:shadow-lg py-5  p-6 bg-[white] border-[1px] border-gray-200 cursor-pointer  w-full  rounded-lg">
+                    class="flex items-center justify-between gap-[18px] dark:bg-gray-800 group hover:shadow-lg py-5  p-6 bg-[white] border-[1px] border-gray-200 dark:border-gray-600 cursor-pointer  w-full  rounded-lg">
                     <div>
                         <h1 class="text-gray-600 dark:text-white">Total Students</h1>
                         <h1 class="text-gray-600 dark:text-white"><span id="total-students">0</span></h1>
@@ -160,7 +160,7 @@
                     </div>
                 </div>
                 <div
-                    class="flex items-center duration-200 dark:bg-gray-800 justify-between gap-[18px] group hover:shadow-lg py-5  p-6 bg-[white] border-[1px] border-gray-200 cursor-pointer  w-full  rounded-lg">
+                    class="flex items-center duration-200 dark:bg-gray-800 justify-between gap-[18px] group hover:shadow-lg py-5  p-6 bg-[white] border-[1px] border-gray-200 dark:border-gray-600 cursor-pointer  w-full  rounded-lg">
                     <div>
                         <h1 class="text-gray-600 dark:text-white">Avg Teacher Rating</h1>
                         <h class="text-gray-600 dark:text-white"><span id="avg-teacher">0</span></h>
@@ -176,7 +176,7 @@
                     </div>
                 </div>
                 <div
-                    class="flex items-center dark:bg-gray-800 justify-between gap-[18px] group hover:shadow-lg py-5  p-6 bg-[white] border-[1px] border-gray-200 cursor-pointer  w-full  rounded-lg">
+                    class="flex items-center dark:bg-gray-800 justify-between gap-[18px] group hover:shadow-lg py-5  p-6 bg-[white] border-[1px] border-gray-200 dark:border-gray-600 cursor-pointer  w-full  rounded-lg">
                     <div>
                         <h1 class="text-gray-600 dark:text-white">Avg Student Rating</h1>
                         <h1 class="text-gray-900 dark:text-white"><span id="avg-student">0</span></h1>
@@ -193,7 +193,7 @@
                 </div>
             </div>
             <div class="mt-[30px] pr-[20px] grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="w-full bg-white dark:bg-gray-800 border-1 rounded-lg border-gray-200 py-6 px-5">
+                <div class="w-full bg-white dark:bg-gray-800 border-1 rounded-lg border-gray-200 dark:border-gray-600 py-6 px-5">
                     <h4 class="leading-none text-gray-900 dark:text-white">Quick Actions</h4>
                     <div class="flex flex-col gap-3 mt-[30px]">
                         <div
@@ -234,7 +234,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full bg-white dark:bg-gray-800 border-1 rounded-lg border-gray-200 py-6 px-5">
+                <div class="w-full bg-white dark:bg-gray-800 border-1 rounded-lg border-gray-200 dark:border-gray-600 py-6 px-5">
                     <h4 data-slot="card-title" class="leading-none text-gray-900 dark:text-white">Recent Activity</h4>
                     <div class="flex flex-col gap-3 mt-[30px]">
                         <div class="flex items-start gap-3">
