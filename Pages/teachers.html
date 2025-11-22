@@ -110,13 +110,13 @@
                 <p class="text-gray-600 text-[18px] dark:text-gray-400">Showing <span id="teachers-number">0</span> of
                     20 teachers</p>
                 <button id="add-teachers"
-                    class="w-35 py-3 text-white text-[18px] bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center cursor-pointer">
+                    class="w-35 py-1.5 text-white text-[16px] bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center cursor-pointer">
                     + Add Teacher
                 </button>
             </div>
         </div>
         <div class="w-full pl-[330px] px-[20px] relative mt-[40px] ">
-            <input id="search-teacher"
+            <input required id="search-teacher"
                 class="border-[1px] w-full  border-gray-200 rounded-lg py-1 outline-none  px-7 h-9"
                 placeholder="Search teachers by name, email, or profession..." type="search">
             <svg class="absolute top-2 left-[335px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -129,13 +129,13 @@
             </svg>
         </div>
         <div class="pl-[330px] px-[20px] flex items-center gap-5 mt-[20px]">
-            <select
+            <select id="select-gener"
                 class="gener-select bg-[white] rounded-lg w-40 border-1 border-gray-200 py-3 cursor-pointer px-2 outline-none">
                 <option class="option:hover" value="All Gener">All Gener</option>
                 <option class="option:hover" value="Male">Male</option>
                 <option class="option:hover" value="Female">Female</option>
             </select>
-            <select class="bg-[white] rounded-lg w-40 border-1 border-gray-200 py-3 cursor-pointer px-2 outline-none">
+            <select id="select-experience" class="bg-[white] rounded-lg w-40 border-1 border-gray-200 py-3 cursor-pointer px-2 outline-none">
                 <option class="option:hover" value="All Gener">All Experience</option>
                 <option class="option:hover" value="0-5 years">0-5 years</option>
                 <option class="option:hover" value="6-10 years">6-10 years</option>
@@ -173,23 +173,35 @@
             <div>
                 <h1 class="text-center font-bold mb-2 text-[20px]">Add Teachers</h1>
             </div>
-            <form id="form" class="flex flex-col gap-3">
-                <div class="flex items-center gap-2">
-                    <input class="border-b-[1px] outline-none w-full py-3 px-2" type="text" placeholder="fristName"
+            <form id="form" class="flex flex-col gap-4">
+                <div class="flex items-center gap-4">
+                    <input required class="border-b-[1px] outline-none w-full py-3 px-2" type="text" placeholder="fristName"
                         id="">
-                    <input class="border-b-[1px] outline-none w-full py-3 px-2" type="text" placeholder="lastName"
+                    <input required class="border-b-[1px] outline-none w-full py-3 px-2" type="text" placeholder="lastName"
                         id="">
                 </div>
-                <div class="flex items-center gap-2">
-                    <input class="border-b-[1px] cursor-pointe outline-none w-full py-3 px-2" type="date"
+                <div class="flex items-center gap-4">
+                    <input required class="border-b-[1px] cursor-pointe outline-none w-full py-3 px-2" type="date"
                         placeholder="date" id="">
-                    <input class="border-b-[1px] cursor-pointe outline-none w-full py-3 px-2" type="number"
+                    <input required class="border-b-[1px] cursor-pointe outline-none w-full py-3 px-2" type="number"
                         placeholder="Age" id="">
-                    <input class="border-b-[1px] cursor-pointe outline-none w-full py-3 px-2" type="text"
+                    <input required class="border-b-[1px] cursor-pointe outline-none w-full py-3 px-2" type="text"
                         placeholder="Avatar" id="">
                 </div>
-                <div class="flex items-center gap-2">
-                    <select class="border-b-[1px] cursor-pointer py-3 px-2 outline-none">
+                <div class="flex items-center gap-4">
+                    <select required class="border-b-[1px] cursor-pointer  py-3 px-2 outline-none">
+                        <option value="All profession">All Experience</option>
+                        <option value="0-5 years">0-5 years</option>
+                        <option value="6-10 years">6-10 years</option>
+                        <option value="11-20 years">11-20 years</option>
+                    </select>
+                    <select required class="border-b-[1px] cursor-pointer  py-3 px-2 outline-none">
+                        <option value="All profession">All Rating</option>
+                        <option value="4.5+">4.5+ stars</option>
+                        <option value="4.0+">4.0+ stars</option>
+                        <option value="3.5+">3.5+ stars</option>
+                    </select>
+                    <select required class="border-b-[1px] cursor-pointer py-3 px-2 outline-none">
                         <option value="All profession">All Profession</option>
                         <option value="History">History</option>
                         <option value="Geography">Geography</option>
@@ -203,38 +215,26 @@
                         <option value="Art">Art</option>
                         <option value="Chemistry">Chemistry</option>
                     </select>
-                    <select class="border-b-[1px] cursor-pointer  py-3 px-2 outline-none">
-                        <option value="All profession">All Rating</option>
-                        <option value="4.5+ stars">4.5+ stars</option>
-                        <option value="4.0+ stars">4.0+ stars</option>
-                        <option value="3.5+ starts">3.5+ starts</option>
-                    </select>
-                    <select class="border-b-[1px] cursor-pointer  py-3 px-2 outline-none">
-                        <option value="All profession">All Experience</option>
-                        <option value="0-5 years">0-5 years</option>
-                        <option value="6-10 years">6-10 years</option>
-                        <option value="11-20 years">11-20 years</option>
-                    </select>
-                    <select class="border-b-[1px] cursor-pointer  py-3 px-2 outline-none">
+                    <select required class="border-b-[1px] cursor-pointer  py-3 px-2 outline-none">
                         <option value="All profession">All Gener</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
                 </div>
-                <div class="flex items-center gap-2">
-                    <input class="border-b-[1px] outline-none w-full py-3 px-2" type="tel" placeholder="Phone" id="">
-                    <input class="border-b-[1px] outline-none w-full py-3 px-2" type="email" placeholder="Email" id="">
+                <div class="flex items-center gap-4">
+                    <input required class="border-b-[1px] outline-none w-full py-3 px-2" type="tel" placeholder="Phone" id="">
+                    <input required class="border-b-[1px] outline-none w-full py-3 px-2" type="email" placeholder="Email" id="">
                 </div>
-                <div class="flex items-center gap-2">
-                    <input class="border-b-[1px] outline-none w-full py-3 px-2" type="text" placeholder="Telegram"
+                <div class="flex items-center gap-4">
+                    <input required class="border-b-[1px] outline-none w-full py-3 px-2" type="text" placeholder="Telegram"
                         id="">
-                    <input class="border-b-[1px] outline-none w-full py-3 px-2" type="text" placeholder="Linkedin"
+                    <input required class="border-b-[1px] outline-none w-full py-3 px-2" type="text" placeholder="Linkedin"
                         id="">
                 </div>
                 <div class="flex items-center justify-center">
                     <button type="submit"
                         class="w-35 py-3 text-white text-[16px] font-bold bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center cursor-pointer">
-                       Add
+                        Add
                     </button>
                 </div>
             </form>

@@ -55,16 +55,17 @@
         <div class="px-[20px] mt-[15px] flex flex-col gap-[12px]">
             <a href="../index.html"
                 class="flex items-center gap-2 group dark:shadow-blue-500/30 hover:bg-gray-100 shadow-sm rounded-lg py-3 px-4 duration-400 cursor-pointer">
-                <svg class="xmlns=" http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-layout-dashboard h-5 w-5 flex-shrink-0" aria-hidden="true">
-                    <rect width="7" height="9" x="3" y="3" rx="1"></rect>
-                    <rect width="7" height="5" x="14" y="3" rx="1"></rect>
-                    <rect width="7" height="9" x="14" y="12" rx="1"></rect>
-                    <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                    class="lucide lucide-layout-dashboard h-5 w-5 flex-shrink-0">
+                    <path d="M3 3h7v7H3z"></path>
+                    <path d="M14 3h7v7h-7z"></path>
+                    <path d="M14 14h7v7h-7z"></path>
+                    <path d="M3 14h7v7H3z"></path>
                 </svg>
 
-                <span class="">Dashboard</span>
+                <span>Dashboard</span>
             </a>
             <a href="./teachers.html"
                 class="flex items-center dark:shadow-blue-500/30 gap-2 group hover:bg-gray-100 shadow-sm rounded-lg py-3 px-4 duration-400 cursor-pointer">
@@ -113,11 +114,103 @@
                 <p class="text-gray-600 text-[18px] dark:text-gray-400">Mange your application settings</p>
             </div>
         </div>
-        <div class="pl-[330px] mt-10">
-            <div class="bg-white border-1 border-gray-200 max-w-[700px] p-6 w-full">
+        <div class="pl-[330px] mt-10 flex flex-col gap-4 pb-20">
+            <div class="bg-white border-1 rounded-xl border-gray-200 max-w-[700px] p-6 w-full">
                 <div>
-                    <h1>Profile Settings</h1>
-                    <p>Update your profile information</p>
+                    <h1 class="text-[18px]">Profile Settings</h1>
+                    <p class="text-gray-500">Update your profile information</p>
+                    <div class="mt-3">
+                        <label class="font-bold">Name</label>
+                        <input class="w-full mt-1 border-[1px] border-gray-200 rounded-lg py-2 px-[15px] outline-none"
+                            type="text" placeholder="Your name" name="" id="">
+                    </div>
+                    <div class="mt-3">
+                        <label class="font-bold">Email</label>
+                        <input class="w-full mt-1 border-[1px] border-gray-200 rounded-lg py-2 px-[15px] outline-none"
+                            type="email" placeholder="your.email@example.com" name="" id="">
+                    </div>
+                    <button data-slot="button"
+                        class="inline-flex bg-[black] text-[white] mt-5 items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[&gt;svg]:px-3">Save
+                        Changes</button>
+                </div>
+            </div>
+            <div data-slot="card"
+                class="text-card-foreground flex flex-col gap-6 max-w-[700px] w-full rounded-xl border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                <div data-slot="card-header"
+                    class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+                    <h4 data-slot="card-title" class="leading-none text-gray-900 dark:text-white">Notifications</h4>
+                    <p data-slot="card-description" class="text-muted-foreground">Manage your notification preferences
+                    </p>
+                </div>
+                <div data-slot="card-content" class="px-6 [&amp;:last-child]:pb-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-900 dark:text-white">Email Notifications</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Receive email updates about your account
+                            </p>
+                        </div>
+                        <button class="peer 
+    data-[state=checked]:bg-blue-500 
+    data-[state=unchecked]:bg-gray-300
+    inline-flex h-[1.15rem] w-8 items-center rounded-full transition-all">
+
+                            <span data-state="unchecked" class="bg-white block size-4 rounded-full transition-transform
+        data-[state=checked]:translate-x-[calc(100%-2px)]
+        data-[state=unchecked]:translate-x-0"></span>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-900 dark:text-white">Push Notifications</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Receive push notifications on your
+                                devices</p>
+                        </div><button type="button" role="switch" aria-checked="false" data-state="unchecked" value="on"
+                            data-slot="switch"
+                            class="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-switch-background focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"><span
+                                data-state="unchecked" data-slot="switch-thumb"
+                                class="bg-card dark:data-[state=unchecked]:bg-card-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"></span></button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-900 dark:text-white">Weekly Reports</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Get weekly reports about school
+                                activities</p>
+                        </div><button type="button" role="switch" aria-checked="true" data-state="checked" value="on"
+                            data-slot="switch"
+                            class="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-switch-background focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"><span
+                                data-state="checked" data-slot="switch-thumb"
+                                class="bg-card dark:data-[state=unchecked]:bg-card-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"></span></button>
+                    </div>
+                </div>
+            </div>
+            <div data-slot="card"
+                class="text-card-foreground max-w-[700px] w-full flex flex-col gap-6 rounded-xl border bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                <div data-slot="card-header"
+                    class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+                    <h4 data-slot="card-title" class="leading-none text-gray-900 dark:text-white">Privacy</h4>
+                    <p data-slot="card-description" class="text-muted-foreground">Manage your privacy settings</p>
+                </div>
+                <div data-slot="card-content" class="px-6 [&amp;:last-child]:pb-6 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-900 dark:text-white">Public Profile</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Make your profile visible to others</p>
+                        </div><button type="button" role="switch" aria-checked="true" data-state="checked" value="on"
+                            data-slot="switch"
+                            class="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-switch-background focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"><span
+                                data-state="checked" data-slot="switch-thumb"
+                                class="bg-card dark:data-[state=unchecked]:bg-card-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"></span></button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-900 dark:text-white">Show Activity Status</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Let others see when you're online</p>
+                        </div><button type="button" role="switch" aria-checked="true" data-state="checked" value="on"
+                            data-slot="switch"
+                            class="peer data-[state=checked]:bg-primary data-[state=unchecked]:bg-switch-background focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex h-[1.15rem] w-8 shrink-0 items-center rounded-full border border-transparent transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50"><span
+                                data-state="checked" data-slot="switch-thumb"
+                                class="bg-card dark:data-[state=unchecked]:bg-card-foreground dark:data-[state=checked]:bg-primary-foreground pointer-events-none block size-4 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-0"></span></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -125,9 +218,7 @@
 
 
 
-
-
-    <script src="../card-data/card-data.js"></script>
+    <script src="../Js/setting.js"></script>
     <script src="../Js/main.js"></script>
 </body>
 

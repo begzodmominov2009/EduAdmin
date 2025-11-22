@@ -3,22 +3,32 @@ let teachersNumber = document.getElementById("teachers-number")
 let form = document.getElementById("form")
 let modalTeachers = document.getElementById("modal-teachers")
 let addTeachers = document.getElementById("add-teachers")
+let selectGener = document.getElementById("select-gener")
+let selectExperience = document.getElementById("select-experience")
+let renderTeachers = []
 
-async function getData(content) {
+async function getData() {
     try {
         let res = await axios.get("https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers")
+        renderTeachers = res.data
         teachersNumber.textContent = res.data.length
-        console.log(res.data);
+        showCard(renderTeachers)
+    } catch (err) {
+        console.log(err)
+    }
+}
 
-        res.data.map((el) => {
-            content.innerHTML += `
+function showCard(data) {
+    allCard.innerHTML = ""
+    data.map((el) => {
+        allCard.innerHTML += `
           <div
                 class="w-full border-1 group hover:shadow-xl transform transition hover:scale-102 duration-300 border-gray-200 bg-white p-6 rounded-lg">
                 <div class="flex flex-col gap-2 items-center justify-center">
-                    <img class="aspect-square w-20 h-20 rounded-[50%] bg-blue-200 p-[3px]" alt="Marlene O'Reilly"
+                    <img class="aspect-square object-cover w-20 h-20 rounded-[50%] bg-blue-200 p-[3px]" alt="Marlene O'Reilly"
                         src=${el.avatar}
                     <h3 class="text-gray-900 dark:text-white mb-1">${el.firstName}</h3>
-                    <span class="px-2 pb-1 bg-gray-200 rounded-lg text-[14px]"">${el.Experience}</span>
+                    <p class="px-2 pb-1 bg-gray-200 rounded-lg text-[14px]"">${el.Experience}</p>
                         <div class=" flex gap-3">
                         <div class=" flex items-center gap-[2px]">
                             <svg xmlns=" http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -108,7 +118,7 @@ async function getData(content) {
                         </svg>
                         <p class="font-bold text-[14px]">Edit</p>
                     </div>
-                    <div
+                    <div onClick="deletTeacher(${el.id})"
                         class="flex items-center py-0.5 w-full gap-2 bg-[white] group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -124,14 +134,11 @@ async function getData(content) {
                 </div>
             </div>
         </div>
-        `        })
-    } catch (err) {
-        console.log(err);
-
-    }
+        `
+    })
 }
 
-getData(allCard)
+getData()
 
 addTeachers.addEventListener("click", () => {
     modalTeachers.classList.remove("hidden")
@@ -139,7 +146,7 @@ addTeachers.addEventListener("click", () => {
 
 async function addTeacher(payload) {
     try {
-        await axios.post("https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers")
+        await axios.post("https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers", payload)
     } catch (error) {
         console.log(error);
 
@@ -166,6 +173,33 @@ form.addEventListener("submit", (e) => {
     addTeacher(teachersObj)
     getData()
 })
+
+async function deletTeacher(id) {
+    try {
+        await axios.delete(`https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers/${id}`)
+        console.log("Deleted", id)
+        await getData(allCard)
+    } catch (err) {
+        console.log(err)
+    }
+    getData()
+}
+
+selectGener.addEventListener("change", (e) => {
+    let selectValue = e.target.value;
+    let filtered = selectValue === "All Gener" ? renderTeachers : renderTeachers.filter((el) => el.ganer === selectValue)
+    showCard(filtered)
+})
+
+selectExperience.addEventListener("change", (e) => {
+    let selectValue = e.target.value;
+    let filteredExperience = selectValue === "All Experience" ? renderTeachers
+        : renderTeachers.filter(el => Number(el.Experience) === Number(selectValue));
+         showCard(filteredExperience)
+})
+
+
+
 
 
 
