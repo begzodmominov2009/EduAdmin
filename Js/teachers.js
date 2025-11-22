@@ -1,11 +1,15 @@
 let allCard = document.querySelector(".all-card")
 let teachersNumber = document.getElementById("teachers-number")
-
+let form = document.getElementById("form")
+let modalTeachers = document.getElementById("modal-teachers")
+let addTeachers = document.getElementById("add-teachers")
 
 async function getData(content) {
     try {
         let res = await axios.get("https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers")
         teachersNumber.textContent = res.data.length
+        console.log(res.data);
+
         res.data.map((el) => {
             content.innerHTML += `
           <div
@@ -123,11 +127,46 @@ async function getData(content) {
         `        })
     } catch (err) {
         console.log(err);
-        
+
     }
 }
 
 getData(allCard)
+
+addTeachers.addEventListener("click", () => {
+    modalTeachers.classList.remove("hidden")
+})
+
+async function addTeacher(payload) {
+    try {
+        await axios.post("https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers")
+    } catch (error) {
+        console.log(error);
+
+    }
+}
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
+    let teachersObj = {}
+    teachersObj.firstName = form[0].value
+    teachersObj.lastName = form[1].value
+    teachersObj.createdAt = form[2].value
+    teachersObj.age = form[3].value
+    teachersObj.avatar = form[4].value
+    teachersObj.profession = form[5].value
+    teachersObj.rating = form[6].value
+    teachersObj.Experience = form[7].value
+    teachersObj.ganer = form[8].value
+    teachersObj.phone = form[9].value
+    teachersObj.email = form[10].value
+    teachersObj.telegram = form[11].value
+    teachersObj.linkedin = form[12].value
+    modalTeachers.classList.add("hidden")
+    addTeacher(teachersObj)
+    getData()
+})
+
 
 
 
