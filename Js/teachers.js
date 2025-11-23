@@ -5,6 +5,7 @@ let modalTeachers = document.getElementById("modal-teachers")
 let innerModal = document.getElementById("inner-modal")
 let addTeachers = document.getElementById("add-teachers")
 let selectGener = document.getElementById("select-gener")
+let selectProfession = document.getElementById("select-profession")
 let asideToggleTeachers = document.getElementById("aside-toggle-teacher")
 let asideContentTeacher = document.querySelector(".aside-content-teacher")
 let asideContentsTeacher = document.querySelector(".aside-content-teacher2")
@@ -122,7 +123,7 @@ function showCard(data) {
                 <div class="flex items-center gap-2 mt-6 sm:mt-12">
                     <div
                         class="flex items-center py-0.5 w-full gap-2 bg-[white] dark:bg-gray-900 dark:border-gray-900 group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
-                        <svg class="fill="black" dark:fill=[white]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-pencil h-4 w-4" aria-hidden="true">
                             <path
@@ -210,7 +211,39 @@ async function deletTeacher(id) {
 selectGener.addEventListener("change", (e) => {
     let selectValue = e.target.value;
     let filtered = selectValue === "All Gener" ? renderTeachers : renderTeachers.filter((el) => el.ganer === selectValue)
+
+    allCard.innerHTML = ""
+    if (filtered.length === 0) {
+        allCard.innerHTML = `
+          <div class="flex items-center justify-center">
+           <p class="text-red-500 text-xl font-semibold py-10">
+                No such person found 😕
+            </p>
+          </div>
+        `;
+        return
+    }
+
     showCard(filtered)
+})
+
+selectProfession.addEventListener("change", (e) => {
+    let selectValues = e.target.value;
+    console.log(selectValues);
+    let filtereds = selectValues === "All Profession" ? renderTeachers : renderTeachers.filter((el) => el.profession === selectValues)
+
+    allCard.innerHTML = ""
+    if (filtereds.length === 0) {
+        allCard.innerHTML = `
+          <div class="flex items-center justify-center">
+           <p class="text-red-500 text-xl font-semibold py-10">
+                No such person found 😕
+            </p>
+          </div>
+        `;
+        return
+    }
+    showCard(filtereds)
 })
 
 

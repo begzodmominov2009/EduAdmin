@@ -12,7 +12,8 @@
 
 <body class="dark bg-[#f5f5f55b] dark:bg-gray-900">
 
-    <div id="loading-teacher" class="fixed left-0 top-0 bg-[whitesmoke] dark:bg-gray-900 z-1 w-full h-full flex items-center justify-center">
+    <div id="loading-teacher"
+        class="fixed left-0 top-0 bg-[whitesmoke] dark:bg-gray-900 z-1 w-full h-full flex items-center justify-center">
         <div class="flex items-center justify-center text-center ml-14 sm:ml-20 md:ml-50 mt-0 md:mt-10">
             <div
                 class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center cursor-pointer">
@@ -33,7 +34,8 @@
         <div id="header-teacher"
             class="flex items-center justify-between pl-[80px] md:pl-[290px] border-t-[1px] dark:border-gray-600 px-[20px] py-[18px] border-gray-200 border-b-[1px]">
             <h1 class="text-[20px] sm:text-[24px] font-bold text-gray-900 dark:text-white">School Management System</h1>
-            <button id="button" class="hidden sm:flex bg-[whitesmoke] dark:bg-gray-200 cursor-pointer p-[2.5px] rounded-[50%]">
+            <button id="dark-toggle"
+                class="hidden sm:flex bg-[whitesmoke] dark:bg-gray-200 cursor-pointer p-[2.5px] rounded-[50%]">
                 <img src="../assets/header/moon_stars_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
             </button>
         </div>
@@ -229,7 +231,8 @@
                 </div>
                 <p class="text-gray-800 dark:text-white aside-content-teacher5 hidden md:flex">Settings</p>
             </a>
-            <button id="button" class="flex sm:hidden bg-[whitesmoke] dark:bg-gray-200 cursor-pointer p-[2.5px] rounded-[50%]">
+            <button id="button"
+                class="flex sm:hidden bg-[whitesmoke] dark:bg-gray-200 cursor-pointer p-[2.5px] rounded-[50%]">
                 <img src="../assets/header/moon_stars_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
             </button>
         </div>
@@ -288,17 +291,18 @@
                 </select>
                 <select id="select-profession"
                     class="bg-[white] dark:bg-gray-800 dark:text-[white] dark:border-gray-600 rounded-lg w-40 border-1 border-gray-200 py-2 cursor-pointer px-2 outline-none">
-                    <option class="option:hover" value="All Gener">All Profession</option>
-                    <option class="option:hover" value="4.5+ stars">Geography</option>
-                    <option class="option:hover" value="4.0+ stars">History</option>
-                    <option class="option:hover" value="3.5+ stars">Music</option>
-                    <option class="option:hover" value="3.5+ stars">Physical Education</option>
-                    <option class="option:hover" value="3.5+ stars">Spanish</option>
-                    <option class="option:hover" value="3.5+ stars">Physics</option>
-                    <option class="option:hover" value="3.5+ stars">Art</option>
-                    <option class="option:hover" value="3.5+ stars">Mathemtics</option>
-                    <option class="option:hover" value="3.5+ stars">Chemistry</option>
-                    <option class="option:hover" value="3.5+ stars">Computer Science</option>
+                    <option class="option:hover" value="All Profession">All Profession</option>
+                    <option class="option:hover" value="Geography">Geography</option>
+                    <option class="option:hover" value="History">History</option>
+                    <option class="option:hover" value="Biology">Biology</option>
+                    <option class="option:hover" value="Music">Music</option>
+                    <option class="option:hover" value="Physical Education">Physical Education</option>
+                    <option class="option:hover" value="Spanish">Spanish</option>
+                    <option class="option:hover" value="Physics">Physics</option>
+                    <option class="option:hover" value="Art">Art</option>
+                    <option class="option:hover" value="Mathemtics">Mathemtics</option>
+                    <option class="option:hover" value="Chemistry">Chemistry</option>
+                    <option class="option:hover" value="Computer Science">Computer Science</option>
                 </select>
             </div>
             <div
@@ -384,7 +388,11 @@
     </div>
 
 
-
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
     <script src="../Js/teachers.js"></script>
 </body>
 
