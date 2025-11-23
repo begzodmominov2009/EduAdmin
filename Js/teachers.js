@@ -41,7 +41,7 @@ function showCard(data) {
                 <div class="flex flex-col gap-2 items-center justify-center">
                     <img class="aspect-square object-cover w-20 h-20 rounded-[50%] bg-blue-200 p-[3px]" alt="Marlene O'Reilly"
                         src=${el.avatar}
-                    <h3 class="text-gray-900 dark:text-white mb-1">${el.firstName}</h3>
+                    <h3 class="text-gray-900 dark:text-[white] mb-1">${el.firstName}</h3>
                     <p class="px-2 pb-1 bg-gray-200 dark:bg-gray-900 dark:text-[white] rounded-lg text-[14px]"">${el.profession}</p>
                         <div class=" flex gap-3">
                         <div class=" flex items-center gap-[2px]">
@@ -51,7 +51,7 @@ function showCard(data) {
                                 <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                                 <rect width="20" height="14" x="2" y="6" rx="2"></rect>
                             </svg>
-                            <p class="text-[black] dark:text-gray-600">${el.Experience}y</p>
+                            <p class="text-[black] dark:text-gray-400">${el.Experience}y</p>
                         </div>
                         <div class="flex items-center gap-[2px]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -62,7 +62,7 @@ function showCard(data) {
                                 <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
                                 <circle cx="9" cy="7" r="4"></circle>
                             </svg>
-                            <p class="text-[black] dark:text-gray-600">5</p>
+                            <p class="text-[black] dark:text-gray-400">5</p>
                         </div>
                 </div>
                 <div class="flex items-center gap-[2px]">
@@ -85,7 +85,7 @@ function showCard(data) {
                             d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
                         </path>
                     </svg>
-                    <span class="truncate text-[black] dark:text-gray-600">${el.phone}</span>
+                    <span class="truncate text-[black] dark:text-gray-400">${el.phone}</span>
                 </div>
                 <div class="flex items-center gap-[6px]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -94,7 +94,7 @@ function showCard(data) {
                         <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
                         <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                     </svg>
-                    <span class="truncate text-[black] dark:text-gray-600">${el.email}</span>
+                    <span class="truncate text-[black] dark:text-gray-400">${el.email}</span>
                 </div>
                 <div class="flex items-center gap-[6px]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -105,7 +105,7 @@ function showCard(data) {
                         </path>
                         <path d="m21.854 2.147-10.94 10.939"></path>
                     </svg>
-                    <span class="truncate  text-[black] dark:text-gray-600">${el.telegram}</span>
+                    <span class="truncate  text-[black] dark:text-gray-400">${el.telegram}</span>
                 </div>
                 <div class="flex items-center gap-[6px]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -115,13 +115,13 @@ function showCard(data) {
                         <rect width="4" height="12" x="2" y="9"></rect>
                         <circle cx="4" cy="4" r="2"></circle>
                     </svg>
-                    <span class="truncate  text-[black] dark:text-gray-600">${el.linkedin}</span>
+                    <span class="truncate  text-[black] dark:text-gray-400">${el.linkedin}</span>
                 </div>
             </div>
             <div class="opacity-none md:opacity-0 group-hover:opacity-100 duration-200">
                 <div class="flex items-center gap-2 mt-6 sm:mt-12">
                     <div
-                        class="flex items-center py-0.5 w-full gap-2 bg-[white] dark:bg-gray-900 group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
+                        class="flex items-center py-0.5 w-full gap-2 bg-[white] dark:bg-gray-900 dark:border-gray-900 group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-pencil h-4 w-4" aria-hidden="true">
