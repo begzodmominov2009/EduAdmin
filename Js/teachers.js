@@ -60,7 +60,7 @@ function showCard(data) {
                                 <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
                                 <circle cx="9" cy="7" r="4"></circle>
                             </svg>
-                            <p>${el.people}y</p>
+                            <p>5</p>
                         </div>
                 </div>
                 <div class="flex items-center gap-[2px]">
