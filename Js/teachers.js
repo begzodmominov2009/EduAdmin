@@ -37,12 +37,12 @@ function showCard(data) {
     data.map((el) => {
         allCard.innerHTML += `
           <div
-                class="w-full border-1 group hover:shadow-xl transform transition hover:scale-102 duration-300 border-gray-200 bg-white p-6 rounded-lg">
+                class="w-full border-1 group hover:shadow-xl transform transition hover:scale-102 duration-300 dark:border-gray-600 dark:bg-gray-800 border-gray-200 bg-white p-6 rounded-lg">
                 <div class="flex flex-col gap-2 items-center justify-center">
                     <img class="aspect-square object-cover w-20 h-20 rounded-[50%] bg-blue-200 p-[3px]" alt="Marlene O'Reilly"
                         src=${el.avatar}
                     <h3 class="text-gray-900 dark:text-white mb-1">${el.firstName}</h3>
-                    <p class="px-2 pb-1 bg-gray-200 rounded-lg text-[14px]"">${el.profession}</p>
+                    <p class="px-2 pb-1 bg-gray-200 dark:bg-gray-900 dark:text-[white] rounded-lg text-[14px]"">${el.profession}</p>
                         <div class=" flex gap-3">
                         <div class=" flex items-center gap-[2px]">
                             <svg xmlns=" http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -51,7 +51,7 @@ function showCard(data) {
                                 <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                                 <rect width="20" height="14" x="2" y="6" rx="2"></rect>
                             </svg>
-                            <p>${el.Experience}y</p>
+                            <p class="text-[black] dark:text-gray-600">${el.Experience}y</p>
                         </div>
                         <div class="flex items-center gap-[2px]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -62,7 +62,7 @@ function showCard(data) {
                                 <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
                                 <circle cx="9" cy="7" r="4"></circle>
                             </svg>
-                            <p>5</p>
+                            <p class="text-[black] dark:text-gray-600">5</p>
                         </div>
                 </div>
                 <div class="flex items-center gap-[2px]">
@@ -73,7 +73,7 @@ function showCard(data) {
                             d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z">
                         </path>
                     </svg>
-                    <p>${el.rating}</p>
+                    <p class="text-[black] dark:text-[white]">${el.rating}</p>
                 </div>
             </div>
             <div class="flex flex-col gap-2 mt-6 sm:mt-12">
@@ -85,7 +85,7 @@ function showCard(data) {
                             d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
                         </path>
                     </svg>
-                    <span class="truncate">${el.phone}</span>
+                    <span class="truncate text-[black] dark:text-gray-600">${el.phone}</span>
                 </div>
                 <div class="flex items-center gap-[6px]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -94,7 +94,7 @@ function showCard(data) {
                         <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
                         <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                     </svg>
-                    <span class="truncate">${el.email}</span>
+                    <span class="truncate text-[black] dark:text-gray-600">${el.email}</span>
                 </div>
                 <div class="flex items-center gap-[6px]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -105,7 +105,7 @@ function showCard(data) {
                         </path>
                         <path d="m21.854 2.147-10.94 10.939"></path>
                     </svg>
-                    <span class="truncate">${el.telegram}</span>
+                    <span class="truncate  text-[black] dark:text-gray-600">${el.telegram}</span>
                 </div>
                 <div class="flex items-center gap-[6px]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -115,13 +115,13 @@ function showCard(data) {
                         <rect width="4" height="12" x="2" y="9"></rect>
                         <circle cx="4" cy="4" r="2"></circle>
                     </svg>
-                    <span class="truncate">${el.linkedin}</span>
+                    <span class="truncate  text-[black] dark:text-gray-600">${el.linkedin}</span>
                 </div>
             </div>
             <div class="opacity-none md:opacity-0 group-hover:opacity-100 duration-200">
                 <div class="flex items-center gap-2 mt-6 sm:mt-12">
                     <div
-                        class="flex items-center py-0.5 w-full gap-2 bg-[white] group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
+                        class="flex items-center py-0.5 w-full gap-2 bg-[white] dark:bg-gray-900 group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-pencil h-4 w-4" aria-hidden="true">
@@ -130,10 +130,10 @@ function showCard(data) {
                             </path>
                             <path d="m15 5 4 4"></path>
                         </svg>
-                        <p class="font-bold text-[14px]">Edit</p>
+                        <p class="font-bold text-[14px] dark:text-[white]">Edit</p>
                     </div>
                     <div onClick="deletTeacher(${el.id})"
-                        class="flex items-center py-0.5 w-full gap-2 bg-[white] group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
+                        class="flex items-center py-0.5 w-full gap-2 bg-[white] dark:bg-gray-900 group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-trash2 lucide-trash-2 h-4 w-4" aria-hidden="true">
