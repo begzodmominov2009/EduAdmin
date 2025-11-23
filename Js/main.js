@@ -8,6 +8,7 @@ let main = document.getElementById("main")
 let header = document.getElementById("header")
 let aside = document.getElementById("aside")
 let asideToggle2 = document.getElementById("aside-toggle2")
+let loadingStatic = document.getElementById("loading-static")
 asideToggle.addEventListener("click", () => {
     asideContent.classList.add("hidden", "duration-400")
     asideContents.classList.add("hidden", "duration-400")
@@ -48,10 +49,10 @@ async function totalTeacher() {
         let teachersRes = await axios.get("https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers")
         let teacher = teachersRes.data;
         let students = studentsRes.data;
-
+        loadingStatic.classList.add("hidden")
         let totalRatingTeacher = teacher.reduce((sum, teacher) => sum + teacher.rating, 0)
         let avgRatingTeacher = totalRatingTeacher / teacher.length;
-        avgTeacher.textContent = avgRatingTeacher.toFixed(1)        
+        avgTeacher.textContent = avgRatingTeacher.toFixed(1)
 
         let totalRatingStudent = students.reduce((sum, students) => sum + students.rating, 0)
         let avgRatingStudent = totalRatingStudent / students.length
@@ -61,7 +62,7 @@ async function totalTeacher() {
         totalStudents.textContent = studentsRes.data.length
     } catch (error) {
         console.log(error);
-
+        loadingStatic.classList.add("hidden")
     }
 }
 totalTeacher()

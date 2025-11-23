@@ -15,6 +15,7 @@ let mainTeacher = document.getElementById("main-teachers")
 let headerTeacher = document.getElementById("header-teacher")
 let asideTeacher = document.getElementById("aside-teacher")
 let asideToggleTeachers2 = document.getElementById("aside-toggle2-teacher")
+let loadingTeacher = document.getElementById("loading-teacher")
 let renderTeachers = []
 
 async function getData() {
@@ -23,10 +24,11 @@ async function getData() {
         renderTeachers = res.data
         teachersNumber.textContent = res.data.length
         console.log(res.data);
-
+        loadingTeacher.classList.add("hidden")
         showCard(renderTeachers)
     } catch (err) {
         console.log(err)
+        loadingTeacher.classList.add("hidden")
     }
 }
 
@@ -74,7 +76,7 @@ function showCard(data) {
                     <p>${el.rating}</p>
                 </div>
             </div>
-            <div class="flex flex-col gap-2 mt-12">
+            <div class="flex flex-col gap-2 mt-6 sm:mt-12">
                 <div class="flex items-center gap-[6px]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -116,8 +118,8 @@ function showCard(data) {
                     <span class="truncate">${el.linkedin}</span>
                 </div>
             </div>
-            <div class="opacity-0 group-hover:opacity-100 duration-200">
-                <div class="flex items-center gap-2 mt-12">
+            <div class="opacity-none md:opacity-0 group-hover:opacity-100 duration-200">
+                <div class="flex items-center gap-2 mt-6 sm:mt-12">
                     <div
                         class="flex items-center py-0.5 w-full gap-2 bg-[white] group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"

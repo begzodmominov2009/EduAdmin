@@ -12,12 +12,17 @@ let asideStudents = document.getElementById("aside-students")
 let asideToggleStudents2 = document.getElementById("aside-toggle2-students")
 let teacherName = document.getElementById("teacher-name")
 let formStudent = document.getElementById("form-student")
+let addStudent = document.getElementById("add-student")
+let moadlStudent = document.getElementById("modal-students")
+let loading = document.getElementById("loading")
+
 
 async function getDataStudents(content) {
     try {
         let res = await axios.get("https://69208abe31e684d7bfcd6e40.mockapi.io/Students")
         let teacherRes = await axios.get("https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers")
         studentsNumber.textContent = res.data.length
+        loading.classList.add("hidden");
         console.log(res.data);
         teacherRes.data.map((el) => {
             teacherName.innerHTML += `
@@ -143,8 +148,9 @@ async function getDataStudents(content) {
                 </div>
             </div>
         `        })
-    } catch (err) {
-
+    } catch (error) {
+        console.log(error);
+        loading.classList.add("hidden");
     }
 }
 getDataStudents(studentsCard)
@@ -152,9 +158,12 @@ getDataStudents(studentsCard)
 formStudent.addEventListener("submit", (e) => {
     e.preventDefault()
     console.log(e.target.value);
-      
+
 })
 
+addStudent.addEventListener("click", () => {
+    moadlStudent.classList.remove("hidden")
+})
 
 asideToggleStudents.addEventListener("click", () => {
     asideContentStudents.classList.add("hidden", "duration-400")
