@@ -41,7 +41,7 @@ function showCard(data) {
                 <div class="flex flex-col gap-2 items-center justify-center">
                     <img class="aspect-square object-cover w-20 h-20 rounded-[50%] bg-blue-200 p-[3px]" alt="Marlene O'Reilly"
                         src=${el.avatar}
-                    <h3 class="text-gray-900 dark:text-[#ffff] mb-1">${el.firstName}</h3>
+                    <h3 class="text-gray-900 dark:text-[white] mb-1">${el.firstName}</h3>
                     <p class="px-2 pb-1 bg-gray-200 dark:bg-gray-900 dark:text-[white] rounded-lg text-[14px]"">${el.profession}</p>
                         <div class=" flex gap-3">
                         <div class=" flex items-center gap-[2px]">
