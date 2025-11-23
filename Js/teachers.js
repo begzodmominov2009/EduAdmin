@@ -2,9 +2,19 @@ let allCard = document.querySelector(".all-card")
 let teachersNumber = document.getElementById("teachers-number")
 let form = document.getElementById("form")
 let modalTeachers = document.getElementById("modal-teachers")
+let innerModal = document.getElementById("inner-modal")
 let addTeachers = document.getElementById("add-teachers")
 let selectGener = document.getElementById("select-gener")
-let selectExperience = document.getElementById("select-experience")
+let asideToggleTeachers = document.getElementById("aside-toggle-teacher")
+let asideContentTeacher = document.querySelector(".aside-content-teacher")
+let asideContentsTeacher = document.querySelector(".aside-content-teacher2")
+let asideContentsTeacher2 = document.querySelector(".aside-content-teacher3")
+let asideContentsTeacher3 = document.querySelector(".aside-content-teacher4")
+let asideContentsTeacher4 = document.querySelector(".aside-content-teacher5")
+let mainTeacher = document.getElementById("main-teachers")
+let headerTeacher = document.getElementById("header-teacher")
+let asideTeacher = document.getElementById("aside-teacher")
+let asideToggleTeachers2 = document.getElementById("aside-toggle2-teacher")
 let renderTeachers = []
 
 async function getData() {
@@ -12,6 +22,8 @@ async function getData() {
         let res = await axios.get("https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers")
         renderTeachers = res.data
         teachersNumber.textContent = res.data.length
+        console.log(res.data);
+
         showCard(renderTeachers)
     } catch (err) {
         console.log(err)
@@ -28,7 +40,7 @@ function showCard(data) {
                     <img class="aspect-square object-cover w-20 h-20 rounded-[50%] bg-blue-200 p-[3px]" alt="Marlene O'Reilly"
                         src=${el.avatar}
                     <h3 class="text-gray-900 dark:text-white mb-1">${el.firstName}</h3>
-                    <p class="px-2 pb-1 bg-gray-200 rounded-lg text-[14px]"">${el.Experience}</p>
+                    <p class="px-2 pb-1 bg-gray-200 rounded-lg text-[14px]"">${el.profession}</p>
                         <div class=" flex gap-3">
                         <div class=" flex items-center gap-[2px]">
                             <svg xmlns=" http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -37,7 +49,7 @@ function showCard(data) {
                                 <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                                 <rect width="20" height="14" x="2" y="6" rx="2"></rect>
                             </svg>
-                            <p>${el.profession}y</p>
+                            <p>${el.Experience}y</p>
                         </div>
                         <div class="flex items-center gap-[2px]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -174,6 +186,14 @@ form.addEventListener("submit", (e) => {
     getData()
 })
 
+innerModal.addEventListener("click", (e) => {
+    e.stopPropagation();
+})
+
+modalTeachers.addEventListener("click", (e) => {
+    modalTeachers.classList.add("hidden")
+})
+
 async function deletTeacher(id) {
     try {
         await axios.delete(`https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers/${id}`)
@@ -191,11 +211,33 @@ selectGener.addEventListener("change", (e) => {
     showCard(filtered)
 })
 
-selectExperience.addEventListener("change", (e) => {
-    let selectValue = e.target.value;
-    let filteredExperience = selectValue === "All Experience" ? renderTeachers
-        : renderTeachers.filter(el => Number(el.Experience) === Number(selectValue));
-         showCard(filteredExperience)
+
+asideToggleTeachers.addEventListener("click", () => {
+    asideContentTeacher.classList.add("hidden", "duration-400")
+    asideContentsTeacher.classList.add("hidden", "duration-400")
+    asideContentsTeacher2.classList.add("hidden", "duration-400")
+    asideContentsTeacher3.classList.add("hidden", "duration-400")
+    asideContentsTeacher4.classList.add("hidden", "duration-400")
+    asideTeacher.style.width = "70px"
+    headerTeacher.style.paddingLeft = "90px";
+    mainTeacher.style.paddingLeft = "90px"
+    mainTeacher.style.transition = "0.4s"
+    headerTeacher.style.transition = "0.4s "
+    asideToggleTeachers.classList.add("hidden", "duration-400")
+    asideToggleTeachers2.classList.remove("hidden", "duration-400")
+})
+asideToggleTeachers2.addEventListener("click", () => {
+    asideContentTeacher.classList.remove("hidden", "duration-400")
+    asideContentsTeacher.classList.remove("hidden", "duration-400")
+    asideContentsTeacher2.classList.remove("hidden", "duration-400")
+    asideContentsTeacher3.classList.remove("hidden", "duration-400")
+    asideTeacher.classList.add("duration-400")
+    asideContentsTeacher4.classList.remove("hidden", "duration-400")
+    asideTeacher.style.width = "260px"
+    headerTeacher.style.paddingLeft = "290px";
+    mainTeacher.style.paddingLeft = "290px"
+    asideToggleTeachers.classList.remove("hidden", "duration-400")
+    asideToggleTeachers2.classList.add("hidden", "duration-400")
 })
 
 

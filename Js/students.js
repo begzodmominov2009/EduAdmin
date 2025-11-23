@@ -1,13 +1,29 @@
 let studentsCard = document.querySelector(".students-card")
 let studentsNumber = document.getElementById("students-number")
+let asideToggleStudents = document.getElementById("aside-toggle-students")
+let asideContentStudents = document.querySelector(".aside-content-students")
+let asideContentsStudents = document.querySelector(".aside-content-students2")
+let asideContentsStudents2 = document.querySelector(".aside-content-students3")
+let asideContentsStudents3 = document.querySelector(".aside-content-students4")
+let asideContentsStudents4 = document.querySelector(".aside-content-students5")
+let mainStudents = document.getElementById("main-students")
+let headerStudents = document.getElementById("header-students")
+let asideStudents = document.getElementById("aside-students")
+let asideToggleStudents2 = document.getElementById("aside-toggle2-students")
+let teacherName = document.getElementById("teacher-name")
+let formStudent = document.getElementById("form-student")
 
 async function getDataStudents(content) {
     try {
         let res = await axios.get("https://69208abe31e684d7bfcd6e40.mockapi.io/Students")
+        let teacherRes = await axios.get("https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers")
         studentsNumber.textContent = res.data.length
-
-        console.log(res);
-
+        console.log(res.data);
+        teacherRes.data.map((el) => {
+            teacherName.innerHTML += `
+            <option value="${el.firstName}">${el.firstName}</option>
+            `
+        })
         res.data.map((el) => {
             content.innerHTML += `
             <div
@@ -131,5 +147,39 @@ async function getDataStudents(content) {
 
     }
 }
-
 getDataStudents(studentsCard)
+
+formStudent.addEventListener("submit", (e) => {
+    e.preventDefault()
+    console.log(e.target.value);
+      
+})
+
+
+asideToggleStudents.addEventListener("click", () => {
+    asideContentStudents.classList.add("hidden", "duration-400")
+    asideContentsStudents.classList.add("hidden", "duration-400")
+    asideContentsStudents2.classList.add("hidden", "duration-400")
+    asideContentsStudents3.classList.add("hidden", "duration-400")
+    asideContentsStudents4.classList.add("hidden", "duration-400")
+    asideStudents.style.width = "70px"
+    headerStudents.style.paddingLeft = "90px";
+    mainStudents.style.paddingLeft = "90px"
+    mainStudents.style.transition = "0.4s"
+    headerStudents.style.transition = "0.4s "
+    asideToggleStudents.classList.add("hidden", "duration-400")
+    asideToggleStudents2.classList.remove("hidden", "duration-400")
+})
+asideToggleStudents2.addEventListener("click", () => {
+    asideContentStudents.classList.remove("hidden", "duration-400")
+    asideContentsStudents.classList.remove("hidden", "duration-400")
+    asideContentsStudents2.classList.remove("hidden", "duration-400")
+    asideContentsStudents3.classList.remove("hidden", "duration-400")
+    asideStudents.classList.add("duration-400")
+    asideContentsStudents4.classList.remove("hidden", "duration-400")
+    asideStudents.style.width = "260px"
+    headerStudents.style.paddingLeft = "290px";
+    mainStudents.style.paddingLeft = "290px"
+    asideToggleStudents.classList.remove("hidden", "duration-400")
+    asideToggleStudents2.classList.add("hidden", "duration-400")
+})
