@@ -41,7 +41,7 @@ function showCard(data) {
                 <div class="flex flex-col gap-2 items-center justify-center">
                     <img class="aspect-square object-cover w-20 h-20 rounded-[50%] bg-blue-200 p-[3px]" alt="Marlene O'Reilly"
                         src=${el.avatar}
-                    <h3 class="text-gray-900 dark:text-[white] mb-1">${el.firstName}</h3>
+                    <h3 class="text-gray-900 dark:text-[#ffff] mb-1">${el.firstName}</h3>
                     <p class="px-2 pb-1 bg-gray-200 dark:bg-gray-900 dark:text-[white] rounded-lg text-[14px]"">${el.profession}</p>
                         <div class=" flex gap-3">
                         <div class=" flex items-center gap-[2px]">
@@ -133,7 +133,7 @@ function showCard(data) {
                         <p class="font-bold text-[14px] dark:text-[white]">Edit</p>
                     </div>
                     <div onClick="deletTeacher(${el.id})"
-                        class="flex items-center py-0.5 w-full gap-2 bg-[white] dark:bg-gray-900 group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
+                        class="flex items-center py-0.5 w-full gap-2 bg-[white] dark:border-gray-900 dark:bg-gray-900 group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-trash2 lucide-trash-2 h-4 w-4" aria-hidden="true">
