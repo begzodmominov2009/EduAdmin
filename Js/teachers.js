@@ -51,7 +51,7 @@ function showCard(data) {
                     <p class="px-2 pb-1 bg-gray-200 dark:bg-gray-900 dark:text-[white] rounded-lg text-[14px]"">${el.profession}</p>
                         <div class=" flex gap-3">
                         <div class=" flex items-center gap-[2px]">
-                            <svg class="text-gray-900 dark:text-white w-[16px] h-[16px]" xmlns=" http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            <svg class="text-[black] dark:text-gray-400 w-[16px] h-[16px]" xmlns=" http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="lucide lucide-briefcase h-4 w-4" aria-hidden="true">
                                 <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
@@ -60,7 +60,7 @@ function showCard(data) {
                             <p class="text-[black] dark:text-gray-400">${el.Experience}y</p>
                         </div>
                         <div class="flex items-center gap-[2px]">
-                            <svg class="text-gray-900 dark:text-white w-[16px] h-[16px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                            <svg class="text-[black] dark:text-gray-400 w-[16px] h-[16px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="lucide lucide-users h-4 w-4" aria-hidden="true">
                                 <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
