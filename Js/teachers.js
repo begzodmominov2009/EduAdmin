@@ -51,7 +51,7 @@ function showCard(data) {
                     <p class="px-2 pb-1 bg-gray-200 dark:bg-gray-900 dark:text-[white] rounded-lg text-[14px]"">${el.profession}</p>
                         <div class=" flex gap-3">
                         <div class=" flex items-center gap-[2px]">
-                            <svg xmlns=" http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            <svg class="text-gray-900 dark:text-white" xmlns=" http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="lucide lucide-briefcase h-4 w-4" aria-hidden="true">
                                 <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
@@ -60,7 +60,7 @@ function showCard(data) {
                             <p class="text-[black] dark:text-gray-400">${el.Experience}y</p>
                         </div>
                         <div class="flex items-center gap-[2px]">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            <svg class="text-gray-900 dark:text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="lucide lucide-users h-4 w-4" aria-hidden="true">
                                 <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
@@ -72,7 +72,7 @@ function showCard(data) {
                         </div>
                 </div>
                 <div class="flex items-center gap-[2px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    <svg class="text-gray-900 dark:text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-star h-4 w-4 fill-yellow-400 text-yellow-400" aria-hidden="true">
                         <path
@@ -84,7 +84,7 @@ function showCard(data) {
             </div>
             <div class="flex flex-col gap-2 mt-6 sm:mt-12">
                 <div class="flex items-center gap-[6px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    <svg class="text-gray-900 dark:text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-phone h-4 w-4 flex-shrink-0 text-blue-500" aria-hidden="true">
                         <path
@@ -94,7 +94,7 @@ function showCard(data) {
                     <span class="truncate text-[black] dark:text-gray-400">${el.phone}</span>
                 </div>
                 <div class="flex items-center gap-[6px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    <svg class="text-gray-900 dark:text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-mail h-4 w-4 flex-shrink-0 text-green-500" aria-hidden="true">
                         <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
@@ -103,7 +103,7 @@ function showCard(data) {
                     <span class="truncate text-[black] dark:text-gray-400">${el.email}</span>
                 </div>
                 <div class="flex items-center gap-[6px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    <svg class="text-gray-900 dark:text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-send h-4 w-4 flex-shrink-0 text-blue-400" aria-hidden="true">
                         <path
@@ -114,7 +114,7 @@ function showCard(data) {
                     <span class="truncate  text-[black] dark:text-gray-400">${el.telegram}</span>
                 </div>
                 <div class="flex items-center gap-[6px]">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    <svg class="text-gray-900 dark:text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-linkedin h-4 w-4 flex-shrink-0 text-blue-600" aria-hidden="true">
                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -128,7 +128,7 @@ function showCard(data) {
                 <div class="flex items-center gap-2 mt-6 sm:mt-12">
                     <div
                         class="flex items-center py-0.5 w-full gap-2 bg-[white] dark:bg-gray-900 dark:border-gray-900 group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        <svg class="text-gray-900 dark:text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-pencil h-4 w-4" aria-hidden="true">
                             <path
@@ -140,7 +140,7 @@ function showCard(data) {
                     </div>
                     <div onClick="deletTeacher(${el.id})"
                         class="flex items-center py-0.5 w-full gap-2 bg-[white] dark:border-gray-900 dark:bg-gray-900 group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-trash2 lucide-trash-2 h-4 w-4" aria-hidden="true">
                             <path d="M10 11v6"></path>
