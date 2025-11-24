@@ -35,7 +35,8 @@ async function getDataStudents(content) {
                 class="w-full border-1 group hover:shadow-xl transform transition hover:scale-102 duration-300 border-gray-200 dark:border-gray-600  dark:bg-gray-800 bg-white p-6 rounded-lg">
                 <div class="flex flex-col gap-2 items-center justify-center">
                     <img class="aspect-square w-20 h-20 rounded-[50%] bg-blue-200 p-[3px]" alt="Marlene O'Reilly"
-                        src=${el.avatar} <h3 class="text-gray-900 dark:text-[white] mb-1">${el.firstName}</h3>
+                        src=${el.avatar} 
+                        <h3 class="text-gray-900 dark:text-white mb-1">${el.firstName}</h3>
                     <div class=" flex gap-3">
                         <div
                             class="border-[1px] border-blue-600 px-2 text-[14px] rounded-lg flex items-center gap-[2px]">
