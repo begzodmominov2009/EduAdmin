@@ -44,8 +44,9 @@ function showCard(data) {
           <div
                 class="w-full border-1 group hover:shadow-xl transform transition hover:scale-102 duration-300 dark:border-gray-600 dark:bg-gray-800 border-gray-200 bg-white p-6 rounded-lg">
                 <div class="flex flex-col gap-2 items-center justify-center">
-                    <img class="aspect-square object-cover w-20 h-20 rounded-[50%] bg-blue-200 p-[3px]" alt="Marlene O'Reilly"
-                        src=${el.avatar}
+                    <a href="../Pages/single-teach.html?teacherId=${el.id}" class="block">
+                      <img class="aspect-square object-cover w-20 h-20 rounded-[50%] bg-blue-200 p-[3px]" alt="Marlene O'Reilly" src="${el.avatar}">
+                    </a>     
                     <h3 class="dark:text-[white] mb-1">${el.firstName}</h3>
                     <p class="px-2 pb-1 bg-gray-200 dark:bg-gray-900 dark:text-[white] rounded-lg text-[14px]"">${el.profession}</p>
                         <div class=" flex gap-3">
@@ -227,9 +228,9 @@ selectGener.addEventListener("change", (e) => {
         `;
         return
     }
-    if(selectGener.value !== "All Gener"){
+    if (selectGener.value !== "All Gener") {
         clearFilter.style.display = "inline-block"
-    }else{
+    } else {
         clearFilter.style.display = "none"
     }
 
@@ -237,13 +238,13 @@ selectGener.addEventListener("change", (e) => {
 })
 
 clearFilter.addEventListener("click", () => {
-        searchTeacher.value = "";
-        selectGener.value = "All Gener"
-        selectExperience.value = "All Experience"
-        selectProfession.value = "All Profession"
-        selectRating.value = "All Rating"
-        clearFilter.style.display = "none"
-        showCard(renderTeachers)
+    searchTeacher.value = "";
+    selectGener.value = "All Gener"
+    selectExperience.value = "All Experience"
+    selectProfession.value = "All Profession"
+    selectRating.value = "All Rating"
+    clearFilter.style.display = "none"
+    showCard(renderTeachers)
 });
 
 selectProfession.addEventListener("change", (e) => {
@@ -262,7 +263,7 @@ selectProfession.addEventListener("change", (e) => {
         `;
         return
     }
-    if(selectProfession.value !== "All Profession"){
+    if (selectProfession.value !== "All Profession") {
         clearFilter.style.display = "inline-block"
     }
     showCard(filtereds)
@@ -283,9 +284,9 @@ selectExperience.addEventListener("change", (e) => {
         `
         return
     }
-    if(selectExperience.value !== "All Experience"){
+    if (selectExperience.value !== "All Experience") {
         clearFilter.style.display = "inline-block"
-    }else{
+    } else {
         clearFilter.style.display = "none"
     }
     showCard(experienceFiltered)
@@ -307,9 +308,9 @@ selectRating.addEventListener("change", (e) => {
         `
         return
     }
-    if(selectRating.value !== "All Rating"){
+    if (selectRating.value !== "All Rating") {
         clearFilter.style.display = "inline-block"
-    }else{
+    } else {
         clearFilter.style.display = "none"
     }
     showCard(ratingFiltered)
@@ -319,14 +320,14 @@ searchTeacher.addEventListener("input", (e) => {
     let searchValue = e.target.value.toLowerCase();
     let searchFiltered = renderTeachers.filter((el) =>
         el.firstName.toLowerCase().includes(searchValue) ||
-        el.lastName.toLowerCase().includes(searchValue) || 
+        el.lastName.toLowerCase().includes(searchValue) ||
         el.Experience.toLowerCase().includes(searchValue) ||
         el.profession.toLowerCase().includes(searchValue) ||
         el.rating.toLowerCase().includes(searchValue)
     );
-    if(searchTeacher.value !== ""){
+    if (searchTeacher.value !== "") {
         clearFilter.style.display = "inline-block"
-    }else{
+    } else {
         clearFilter.style.display = "none"
     }
     showCard(searchFiltered)

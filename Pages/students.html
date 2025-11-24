@@ -19,18 +19,29 @@
 
     <div id="loading" class="fixed left-0 top-0 bg-[whitesmoke] z-1 w-full h-full flex items-center justify-center">
         <div class="flex items-center justify-center text-center ml-14 sm:ml-20 md:ml-50 mt-0 md:mt-10">
-            <div
-                class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-[50%] flex items-center justify-center cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-graduation-cap h-5 w-5 text-white" aria-hidden="true">
-                    <path
-                        d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
-                    </path>
-                    <path d="M22 10v6"></path>
-                    <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
-                </svg>
-            </div>
+            <svg class="w-16 sm:w-28 h-16 sm:h-28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid">
+                <defs>
+                    <linearGradient id="loader-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#3b82f6" />
+                        <stop offset="100%" stop-color="#8b5cf6" />
+                    </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="40" stroke="url(#loader-gradient)" stroke-width="6" fill="none"
+                    stroke-linecap="round" stroke-dasharray="188 188">
+                    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="1s"
+                        repeatCount="indefinite" />
+                </circle>
+                <circle cx="50" cy="50" r="28" fill="url(#loader-gradient)" />
+                <g transform="translate(50,50) scale(1) translate(-12,-12)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24" height="24">
+                        <path
+                            d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                        <path d="M22 10v6" />
+                        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                    </svg>
+                </g>
+            </svg>
         </div>
     </div>
 
