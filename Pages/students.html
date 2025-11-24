@@ -8,14 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.tailwindcss.com" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f5f5f55b;
-        }
-    </style>
 </head>
 
-<body class="dark">
+<body class="dark bg-[#f5f5f55b] dark:bg-gray-900">
 
     <div id="loading" class="fixed left-0 top-0 bg-[whitesmoke] z-1 w-full h-full flex items-center justify-center">
         <div class="flex items-center justify-center text-center ml-14 sm:ml-20 md:ml-50 mt-0 md:mt-10">
@@ -166,7 +161,7 @@
                         <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
                     </svg>
                 </div>
-                <span class="text-gray-900 dark:text-white hidden">EduAdmin</span>
+                <span class="text-gray-900 dark:text-[white] hidden">EduAdmin</span>
             </div>
             <button id="aside-toggle-students"
                 class="hidden group cursor-pointer hover:bg-gray-200 cursor-pointer p-2 rounded-lg"><svg
@@ -187,7 +182,7 @@
         <div class="px-[20px] mt-[15px] flex flex-col gap-[12px]">
             <a href="../index.html"
                 class="flex items-center gap-2 group dark:shadow-blue-500/30  rounded-lg py-2 px-1 duration-400 cursor-pointer">
-                <div class="w-8 h-8 fil flex items-center justify-center">
+                <div class="w-8 h-8 fil dark:text-[white] flex items-center justify-center">
                     <svg class="stroke-black w-24px h-24px  xmlns=" http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" class="lucide lucide-layout-dashboard h-5 w-5 flex-shrink-0"
@@ -202,19 +197,19 @@
             </a>
             <a href="./teachers.html"
                 class="flex items-center w-full gap-2 group dark:shadow-blue-500/30 hover:bg-gray-100  rounded-lg py-2 px-1 duration-400 cursor-pointer">
-                <div class="w-8 h-8 fill=#1f1f1f dark:fill=white flex items-center justify-center">
-                    <svg class="" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                        fill="#1f1f1f">
+                <div class="w-8 h-8 flex items-center justify-center">
+                    <svg class="text-gray-900 dark:text-white w-6 h-6" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 -960 960 960" fill="currentColor">
                         <path
                             d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z" />
                     </svg>
                 </div>
-                <p class="text-gray-800 dark:text-white aside-content-students3 hidden">Teachers</p>
+                <p class="text-gray-800 dark:text-[white] aside-content-students3 hidden">Teachers</p>
             </a>
             <a href="./students.html"
                 class="flex items-center gap-2 group dark:shadow-blue-500/30 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg py-2 px-1 duration-400 cursor-pointer">
                 <div class="flex items-center justify-center w-8 h-8">
-                    <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg class="dark:text-[white]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-graduation-cap h-5 w-5 flex-shrink-0" aria-hidden="true">
                         <path
@@ -229,7 +224,7 @@
             <a href="./settings.html"
                 class="flex items-center dark:shadow-blue-500/30 gap-2 group hover:bg-gray-100 rounded-lg py-2 px-1 duration-400 cursor-pointer">
                 <div class="flex items-center justify-center w-8 h-8">
-                    <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    <svg class="dark:text-[white]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" class="lucide lucide-settings h-5 w-5 flex-shrink-0" aria-hidden="true">
                         <path
@@ -240,7 +235,7 @@
                 </div>
                 <p class="text-gray-800 dark:text-white aside-content-students5 hidden">Settings</p>
             </a>
-            <button id="button" class="flex md:hidden bg-[whitesmoke] cursor-pointer p-[2.5px] rounded-[50%]">
+            <button id="button" class="flex md:hidden bg-[whitesmoke] dark:bg-gray-800 cursor-pointer p-[2.5px] rounded-[50%]">
                 <img src="../assets/header/moon_stars_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
             </button>
         </div>
@@ -249,7 +244,7 @@
     <main>
         <div id="main-students" class="pl-[80px] md:pl-[290px] px-[10px] sm:px-[20px] pt-[80px] md:pt-[120px]">
             <div class="">
-                <h2 class="text-gray-900 text-[20px] font-bold dark:text-white mb-2">Students</h2>
+                <h2 class="text-gray-900 text-[20px] font-bold dark:text-[white] mb-2">Students</h2>
                 <div class="flex items-center justify-between">
                     <p class="text-gray-600 text-[16px] dark:text-gray-400">Showing <span id="students-number">0</span>
                         of
@@ -262,7 +257,7 @@
             </div>
             <div class="w-full relative mt-[20px] sm:mt-[40px] ">
                 <input id="search-teacher"
-                    class="border-[1px] w-full bg-[white]  border-gray-200 rounded-lg py-1 outline-none  px-7 h-9"
+                    class="border-[1px] w-full bg-[white] dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600  border-gray-200 rounded-lg py-1 outline-none  px-7 h-9"
                     placeholder="Search student by name or email..." type="search">
                 <svg class="absolute top-2 left-[5px]" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                     viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round"
@@ -276,27 +271,27 @@
             <div
                 class="overflow-x-scroll scrollbar [&::-webkit-scrollbar]:w-0 w-full flex items-center gap-2 sm:gap-5 mt-[15px] sm:mt-[20px]">
                 <select
-                    class="gener-select bg-[white] rounded-lg w-40 border-1 border-gray-200 py-2 cursor-pointer px-2 outline-none">
+                    class="gener-select bg-[white] dark:border-gray-600 dark:bg-gray-800 dark:text-[white] rounded-lg w-40 border-1 border-gray-200 py-2 cursor-pointer px-2 outline-none">
                     <option class="option:hover" value="All Gener">All Gener</option>
                     <option class="option:hover" value="Male">Male</option>
                     <option class="option:hover" value="Female">Female</option>
                 </select>
                 <select
-                    class="bg-[white] rounded-lg w-40 border-1 border-gray-200 py-2 cursor-pointer px-2 outline-none">
+                    class="bg-[white] dark:border-gray-600 dark:bg-gray-800 dark:text-[white] rounded-lg w-40 border-1 border-gray-200 py-2 cursor-pointer px-2 outline-none">
                     <option class="option:hover" value="All Gener">All Age</option>
                     <option class="option:hover" value="0-5 years">6-10 years</option>
                     <option class="option:hover" value="6-10 years">11-14 years</option>
                     <option class="option:hover" value="11-20 years">15-18 years</option>
                 </select>
                 <select
-                    class="bg-[white] rounded-lg w-40 border-1 border-gray-200 py-2 cursor-pointer px-2 outline-none">
+                    class="bg-[white] dark:border-gray-600 dark:bg-gray-800 dark:text-[white] rounded-lg w-40 border-1 border-gray-200 py-2 cursor-pointer px-2 outline-none">
                     <option class="option:hover" value="All Gener">All Grade</option>
                     <option class="option:hover" value="4.5+ stars">Grade 1-4</option>
                     <option class="option:hover" value="4.0+ stars">Grade 5-8</option>
                     <option class="option:hover" value="3.5+ stars">Grade 8-12</option>
                 </select>
                 <select
-                    class="bg-[white] rounded-lg w-40 border-1 border-gray-200 py-2 cursor-pointer px-2 outline-none">
+                    class="bg-[white] dark:border-gray-600 dark:bg-gray-800 dark:text-[white] rounded-lg w-40 border-1 border-gray-200 py-2 cursor-pointer px-2 outline-none">
                     <option class="option:hover" value="All Gener">All Rating</option>
                     <option class="option:hover" value="4.5+ stars">4.5+ stars</option>
                     <option class="option:hover" value="4.0+ stars">4.0+ stars</option>

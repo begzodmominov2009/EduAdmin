@@ -104,7 +104,7 @@ function showCard(data) {
                 <div class="flex items-center gap-2 mt-6 sm:mt-12">
                     <div
                         class="flex items-center py-0.5 w-full gap-2 bg-[white] dark:bg-gray-900 dark:border-gray-900 group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
-                        <svg class="text-gray-900 w-[20px] h-[20px] dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        <svg class="text-gray-900 w-[18px] h-[18px] dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-pencil h-4 w-4" aria-hidden="true">
                             <path
@@ -116,7 +116,7 @@ function showCard(data) {
                     </div>
                     <div onClick="deletTeacher(${el.id})"
                         class="flex items-center py-0.5 w-full gap-2 bg-[white] dark:border-gray-900 dark:bg-gray-900 group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
-                        <svg class="w-[20px] h-[20px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        <svg class="w-[18px] h-[18px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                             stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="lucide lucide-trash2 lucide-trash-2 h-4 w-4" aria-hidden="true">
                             <path d="M10 11v6"></path>
