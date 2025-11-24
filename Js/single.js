@@ -101,11 +101,11 @@ async function getSingleDatas(id) {
                                 </svg></div>
                             <div>
                                 <p class="text-sm text-gray-600 dark:text-gray-400">Phone</p>
-                                <p class="text-gray-900 dark:text-white">${el.phone}</p>
+                                <p class="text-gray-900 text-[14px] sm:text-[16px] dark:text-white">${el.phone}</p>
                             </div>
                         </div>
                         <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-700/50">
-                            <div class="flex items-center gap-3 mb-2">
+                            <div class="flex items-center gap-1.5 sm:gap-3 mb-2">
                                 <div class="p-2 rounded-lg bg-green-100 dark:bg-green-900"><svg
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -117,12 +117,12 @@ async function getSingleDatas(id) {
                                     </svg></div>
                                 <div>
                                     <p class="text-sm text-gray-600 dark:text-gray-400">Email</p>
-                                    <p class="text-gray-900 line-clamp-1 dark:text-white">${el.email}</p>
+                                    <p class="text-gray-900 text-[14px] sm:text-[16px] dark:text-white">${el.email}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-700/50">
-                            <div class="flex items-center gap-3 mb-2">
+                            <div class="flex items-center gap-1.5 sm:gap-3 mb-2">
                                 <div class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900"><svg
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -135,7 +135,7 @@ async function getSingleDatas(id) {
                                     </svg></div>
                                 <div>
                                     <p class="text-sm text-gray-600 dark:text-gray-400">Telegram</p>
-                                    <p class="text-gray-900 dark:text-white">@${el.telegram}</p>
+                                    <p class="text-gray-900 text-[14px] sm:text-[16px] dark:text-white">@${el.telegram}</p>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +155,7 @@ async function getSingleDatas(id) {
                                     </svg></div>
                                 <div>
                                     <p class="text-sm text-gray-600 dark:text-gray-400">LinkedIn</p>
-                                    <p class="text-gray-900 dark:text-white truncate">${el.linkedin}
+                                    <p class="text-gray-900 dark:text-white text-[14px] sm:text-[16px] truncate">${el.linkedin}
                                     </p>
                                 </div>
                             </div>
