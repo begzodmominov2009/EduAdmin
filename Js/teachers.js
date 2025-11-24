@@ -44,6 +44,8 @@ function showCard(data) {
           <div
                 class="w-full border-1 group hover:shadow-xl transform transition hover:scale-102 duration-300 dark:border-gray-600 dark:bg-gray-800 border-gray-200 bg-white p-6 rounded-lg">
                 <div class="flex flex-col gap-2 items-center justify-center">
+                    <img class="aspect-square object-cover w-20 h-20 rounded-[50%] bg-blue-200 p-[3px]" alt="Marlene O'Reilly"
+                        src=${el.avatar}
                     <h3 class="dark:text-[white] mb-1">${el.firstName}</h3>
                     <p class="px-2 pb-1 bg-gray-200 dark:bg-gray-900 dark:text-[white] rounded-lg text-[14px]"">${el.profession}</p>
                         <div class=" flex gap-3">
