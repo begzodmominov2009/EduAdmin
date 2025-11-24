@@ -157,10 +157,9 @@ getDataStudents(studentsCard)
 
 formStudent.addEventListener("submit", (e) => {
     e.preventDefault()
-    console.log(e.target.value);
+    console.log(e.target.value[1])
 
 })
-
 addStudent.addEventListener("click", () => {
     moadlStudent.classList.remove("hidden")
 })

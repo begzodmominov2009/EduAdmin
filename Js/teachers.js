@@ -6,6 +6,10 @@ let innerModal = document.getElementById("inner-modal")
 let addTeachers = document.getElementById("add-teachers")
 let selectGener = document.getElementById("select-gener")
 let selectProfession = document.getElementById("select-profession")
+let selectExperience = document.getElementById("select-experience")
+let selectRating = document.getElementById("select-rating")
+let searchTeacher = document.getElementById("search-teacher")
+let clearFilter = document.getElementById("clearFilters")
 let asideToggleTeachers = document.getElementById("aside-toggle-teacher")
 let asideContentTeacher = document.querySelector(".aside-content-teacher")
 let asideContentsTeacher = document.querySelector(".aside-content-teacher2")
@@ -40,8 +44,6 @@ function showCard(data) {
           <div
                 class="w-full border-1 group hover:shadow-xl transform transition hover:scale-102 duration-300 dark:border-gray-600 dark:bg-gray-800 border-gray-200 bg-white p-6 rounded-lg">
                 <div class="flex flex-col gap-2 items-center justify-center">
-                    <img class="aspect-square object-cover w-20 h-20 rounded-[50%] bg-blue-200 p-[3px]" alt="Marlene O'Reilly"
-                        src=${el.avatar}
                     <h3 class="dark:text-[white] mb-1">${el.firstName}</h3>
                     <p class="px-2 pb-1 bg-gray-200 dark:bg-gray-900 dark:text-[white] rounded-lg text-[14px]"">${el.profession}</p>
                         <div class=" flex gap-3">
@@ -223,9 +225,24 @@ selectGener.addEventListener("change", (e) => {
         `;
         return
     }
+    if(selectGener.value !== "All Gener"){
+        clearFilter.style.display = "inline-block"
+    }else{
+        clearFilter.style.display = "none"
+    }
 
     showCard(filtered)
 })
+
+clearFilter.addEventListener("click", () => {
+        searchTeacher.value = "";
+        selectGener.value = "All Gener"
+        selectExperience.value = "All Experience"
+        selectProfession.value = "All Profession"
+        selectRating.value = "All Rating"
+        clearFilter.style.display = "none"
+        showCard(renderTeachers)
+});
 
 selectProfession.addEventListener("change", (e) => {
     let selectValues = e.target.value;
@@ -243,9 +260,75 @@ selectProfession.addEventListener("change", (e) => {
         `;
         return
     }
+    if(selectProfession.value !== "All Profession"){
+        clearFilter.style.display = "inline-block"
+    }
     showCard(filtereds)
 })
 
+selectExperience.addEventListener("change", (e) => {
+    let experienceValue = e.target.value;
+    let experienceFiltered = experienceValue === "All Experience" ? renderTeachers
+        : renderTeachers.filter((el) => el.Experience === experienceValue)
+    allCard.innerHTML = ""
+    if (experienceFiltered.length === 0) {
+        allCard.innerHTML = `
+          <div class="flex items-center justify-center">
+           <p class="text-red-500 text-xl font-semibold py-10">
+                No such person found 😕
+            </p>
+          </div>
+        `
+        return
+    }
+    if(selectExperience.value !== "All Experience"){
+        clearFilter.style.display = "inline-block"
+    }else{
+        clearFilter.style.display = "none"
+    }
+    showCard(experienceFiltered)
+
+})
+
+selectRating.addEventListener("change", (e) => {
+    let ratingValue = e.target.value;
+    let ratingFiltered = ratingValue === "All Rating" ? renderTeachers
+        : renderTeachers.filter((el) => el.rating === ratingValue);
+    allCard.innerHTML = ""
+    if (ratingFiltered.length === 0) {
+        allCard.innerHTML = `   
+           <div class="flex items-center justify-center">
+           <p class="text-red-500 text-xl font-semibold py-10">
+                No such person found 😕
+            </p>
+          </div>
+        `
+        return
+    }
+    if(selectRating.value !== "All Rating"){
+        clearFilter.style.display = "inline-block"
+    }else{
+        clearFilter.style.display = "none"
+    }
+    showCard(ratingFiltered)
+})
+
+searchTeacher.addEventListener("input", (e) => {
+    let searchValue = e.target.value.toLowerCase();
+    let searchFiltered = renderTeachers.filter((el) =>
+        el.firstName.toLowerCase().includes(searchValue) ||
+        el.lastName.toLowerCase().includes(searchValue) || 
+        el.Experience.toLowerCase().includes(searchValue) ||
+        el.profession.toLowerCase().includes(searchValue) ||
+        el.rating.toLowerCase().includes(searchValue)
+    );
+    if(searchTeacher.value !== ""){
+        clearFilter.style.display = "inline-block"
+    }else{
+        clearFilter.style.display = "none"
+    }
+    showCard(searchFiltered)
+})
 
 asideToggleTeachers.addEventListener("click", () => {
     asideContentTeacher.classList.add("hidden", "duration-400")
