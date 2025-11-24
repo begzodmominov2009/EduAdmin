@@ -72,7 +72,7 @@ async function getDataStudents(content) {
                         </div>
                     </div>
                     <div class="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
-                        <div class="h-full bg-black rounded-full"></div>
+                        <div class="h-full bg-black dark:bg-gray-300 rounded-full"></div>
                     </div>
                 </div>
                 <div class="flex flex-col gap-2 mt-12">
