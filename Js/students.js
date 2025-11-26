@@ -158,7 +158,7 @@ getDataStudents(studentsCard)
 
 formStudent.addEventListener("submit", (e) => {
     e.preventDefault()
-    console.log(e.target.value[1])
+    console.log(e.target[0].value)
 
 })
 addStudent.addEventListener("click", () => {

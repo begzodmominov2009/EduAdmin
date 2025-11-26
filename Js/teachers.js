@@ -22,6 +22,7 @@ let asideTeacher = document.getElementById("aside-teacher")
 let asideToggleTeachers2 = document.getElementById("aside-toggle2-teacher")
 let loadingTeacher = document.getElementById("loading-teacher")
 let renderTeachers = []
+let selected = null
 
 async function getData() {
     try {
@@ -102,7 +103,7 @@ function showCard(data) {
             </div>
             <div class="opacity-none md:opacity-0 group-hover:opacity-100 duration-200">
                 <div class="flex items-center gap-2 mt-6 sm:mt-12">
-                    <div
+                    <div onClick="editTeacher(${el.id})"
                         class="flex items-center py-0.5 w-full gap-2 bg-[white] dark:bg-gray-900 dark:border-gray-900 group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
                         <svg class="text-gray-900 w-[18px] h-[18px] dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -137,16 +138,56 @@ function showCard(data) {
 getData()
 
 addTeachers.addEventListener("click", () => {
+    form[0].value = firstName = ""
+    form[1].value = lastName = ""
+    form[2].value = createdAt = ""
+    form[3].value = age = ""
+    form[4].value = avatar = ""
+    form[5].value = profession = "All Profession"
+    form[6].value = rating = "All Rating"
+    form[7].value = Experience = "All Experience"
+    form[8].value = ganer = "All Gener"
+    form[9].value = phone = ""
+    form[10].value = email = ""
+    form[11].value = telegram = ""
+    form[12].value = linkedin = ""
     modalTeachers.classList.remove("hidden")
 })
 
 async function addTeacher(payload) {
     try {
-        await axios.post("https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers", payload)
+        if (selected) {
+            await axios.put(`https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers/${selected}`, payload)
+
+        } else {
+            await axios.post("https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers", payload)
+        }
+        getData()
+        selected = null
     } catch (error) {
         console.log(error);
 
     }
+}
+
+async function editTeacher(id) {
+    selected = id
+    modalTeachers.classList.remove("hidden")
+    let teacher = await axios.get(`https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers/${id}`)
+    let teacherObj = teacher.data
+    form[0].value = teacherObj.firstName
+    form[1].value = teacherObj.lastName
+    form[2].value = teacherObj.createdAt
+    form[3].value = teacherObj.age
+    form[4].value = teacherObj.avatar
+    form[5].value = teacherObj.profession
+    form[6].value = teacherObj.rating
+    form[7].value = teacherObj.Experience
+    form[8].value = teacherObj.ganer
+    form[9].value = teacherObj.phone
+    form[10].value = teacherObj.email
+    form[11].value = teacherObj.telegram
+    form[12].value = teacherObj.linkedin
 }
 
 form.addEventListener("submit", (e) => {
@@ -176,6 +217,7 @@ innerModal.addEventListener("click", (e) => {
 
 modalTeachers.addEventListener("click", (e) => {
     modalTeachers.classList.add("hidden")
+    selected = null
 })
 
 async function deletTeacher(id) {
@@ -336,6 +378,7 @@ asideToggleTeachers2.addEventListener("click", () => {
     asideToggleTeachers.classList.remove("hidden", "duration-400")
     asideToggleTeachers2.classList.add("hidden", "duration-400")
 })
+
 
 
 
