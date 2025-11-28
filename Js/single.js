@@ -86,9 +86,9 @@ async function getSingleDatas(id) {
                         </svg>
                         <p>Edit Profile</p>
                     </button>   
-        `
-        teacherContact.innerHTML += `
-         <div class="flex items-center bg-gray-50 rounded-lg p-3 gap-3 pb-4">
+            `
+          teacherContact.innerHTML += `
+            <div class="flex items-center bg-gray-50 rounded-lg p-3 gap-3 pb-4">
                             <div class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -192,3 +192,4 @@ async function getSingleDatas(id) {
 
     }
 }
+getSingleDatas(id)
