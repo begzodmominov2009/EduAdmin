@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+</head>
+
+<body class="dark bg-[#f5f5f55b] dark:bg-gray-900">
+
+    <!-- <div id="loading-teacher-single"
+        class="fixed left-0 top-0 bg-[whitesmoke] dark:bg-gray-900 z-1 w-full h-full flex items-center justify-center">
+        <div class="flex items-center justify-center text-center ml-14 sm:ml-20 md:ml-50 mt-0 md:mt-10">
+            <svg class="w-16 sm:w-28 h-16 sm:h-28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid">
+                <defs>
+                    <linearGradient id="loader-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#3b82f6" />
+                        <stop offset="100%" stop-color="#8b5cf6" />
+                    </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="40" stroke="url(#loader-gradient)" stroke-width="6" fill="none"
+                    stroke-linecap="round" stroke-dasharray="188 188">
+                    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="1s"
+                        repeatCount="indefinite" />
+                </circle>
+                <circle cx="50" cy="50" r="28" fill="url(#loader-gradient)" />
+                <g transform="translate(50,50) scale(1) translate(-12,-12)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24" height="24">
+                        <path
+                            d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
+                        <path d="M22 10v6" />
+                        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
+                    </svg>
+                </g>
+            </svg>
+        </div>
+    </div> -->
+
+    <header class="fixed bg-white dark:bg-gray-800 z-1 top-0 w-full">
+        <div id="header-teacher"
+            class="flex items-center justify-between pl-[80px] md:pl-[290px] border-t-[1px] dark:border-gray-600 px-[20px] py-[18px] border-gray-200 border-b-[1px]">
+            <h1 class="text-[20px] sm:text-[24px] font-bold text-gray-900 dark:text-white">School Management System</h1>
+            <button id="dark-toggle"
+                class="hidden sm:flex bg-[whitesmoke] dark:bg-gray-200 cursor-pointer p-[2.5px] rounded-[50%]">
+                <img src="../assets/header/moon_stars_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+            </button>
+        </div>
+    </header>
+
+    <aside id="aside-teacher"
+        class=" w-[260px] translate-y-[-10000%] md:translate-y-[0%] bg-white dark:bg-gray-800 h-full fixed top-0 z-1 border-r-[1px] border-gray-200 dark:border-gray-600 dark:border-gray-600">
+        <div
+            class="flex items-center justify-between border-t-[1px] border-b-[1px] py-[17px] sm:py-[20px] border-gray-200 dark:border-gray-600 dark:border-gray-600  px-[20px]">
+            <div class="aside-content-teacher flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-graduation-cap h-5 w-5 text-white" aria-hidden="true">
+                        <path
+                            d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+                        </path>
+                        <path d="M22 10v6"></path>
+                        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                    </svg>
+                </div>
+                <span class="text-gray-900 dark:text-white">EduAdmin</span>
+            </div>
+            <button id="aside-toggle-teacher"
+                class="group cursor-pointer hover:bg-gray-200 cursor-pointer p-2 rounded-lg"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chevron-left h-4 w-4" aria-hidden="true">
+                    <path d="m15 18-6-6 6-6"></path>
+                </svg></button>
+            <button id="aside-toggle2-teacher"
+                class="hidden group cursor-pointer hover:bg-gray-200 cursor-pointer p-2 rounded-lg"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chevron-right h-4 w-4" aria-hidden="true">
+                    <path d="m9 18 6-6-6-6"></path>
+                </svg>
+                </svg></button>
+        </div>
+        <div class="px-[20px] mt-[15px] flex flex-col gap-[12px]">
+            <a href="../index.html"
+                class="flex items-center gap-2 group dark:shadow-blue-500/30  rounded-lg py-2 px-1 duration-400 cursor-pointer">
+                <div class="w-8 h-8 fil flex items-center justify-center">
+                    <svg class="stroke-black w-24px h-24px  xmlns=" http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-layout-dashboard h-5 w-5 flex-shrink-0"
+                        aria-hidden="true">
+                        <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                        <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                        <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                        <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                    </svg>
+                </div>
+                <p class="aside-content-teacher2 dark:text-[white]">Dashboard</p>
+            </a>
+            <a href="./teachers.html"
+                class="flex items-center w-full gap-2 group dark:shadow-blue-500/30 hover:bg-gray-100  rounded-lg py-2 px-1 duration-400 cursor-pointer">
+                <div class="w-8 h-8 fill=#1f1f1f dark:fill=white flex items-center justify-center">
+                    <svg class="" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#1f1f1f">
+                        <path
+                            d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z" />
+                    </svg>
+                </div>
+                <p class="text-gray-800 dark:text-white aside-content-students3">Teachers</p>
+            </a>
+            <a href="./students.html"
+                class="flex items-center gap-2 group dark:shadow-blue-500/30 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg py-2 px-1 duration-400 cursor-pointer">
+                <div class="flex items-center justify-center w-8 h-8">
+                    <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-graduation-cap h-5 w-5 flex-shrink-0" aria-hidden="true">
+                        <path
+                            d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+                        </path>
+                        <path d="M22 10v6"></path>
+                        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                    </svg>
+                </div>
+                <span class="text-[white] aside-content-students4">Students</span>
+            </a>
+            <a href="./settings.html"
+                class="flex items-center dark:shadow-blue-500/30 gap-2 group hover:bg-gray-100 rounded-lg py-2 px-1 duration-400 cursor-pointer">
+                <div class="flex items-center justify-center w-8 h-8">
+                    <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-settings h-5 w-5 flex-shrink-0" aria-hidden="true">
+                        <path
+                            d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915">
+                        </path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </div>
+                <p class="text-gray-800 dark:text-[white] aside-content-teacher5">Settings</p>
+            </a>
+            <button id="button" class="flex sm:hidden bg-[whitesmoke] cursor-pointer p-[2.5px] rounded-[50%]">
+                <img src="../assets/header/moon_stars_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+            </button>
+        </div>
+    </aside>
+
+    <aside id="aside-teacher"
+        class="w-[70px] translate-x-[0%] md:translate-x-[-10000%] bg-white dark:bg-gray-800 h-full fixed top-0 z-1 border-r-[1px] border-gray-200 dark:border-gray-600 dark:border-gray-600">
+        <div
+            class="flex items-center justify-between border-t-[1px] border-b-[1px] py-[17px] sm:py-[20px] border-gray-200 dark:border-gray-600 dark:border-gray-600  px-[20px]">
+            <div class="aside-content-teacher flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-graduation-cap h-5 w-5 text-white" aria-hidden="true">
+                        <path
+                            d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+                        </path>
+                        <path d="M22 10v6"></path>
+                        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                    </svg>
+                </div>
+                <span class="text-gray-900 dark:text-white hidden md:flex">EduAdmin</span>
+            </div>
+            <button id="aside-toggle-teacher"
+                class="group cursor-pointer hidden md:flex hover:bg-gray-200 cursor-pointer p-2 rounded-lg"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chevron-left h-4 w-4" aria-hidden="true">
+                    <path d="m15 18-6-6 6-6"></path>
+                </svg></button>
+            <button id="aside-toggle2-teacher"
+                class="hidden group cursor-pointer hover:bg-gray-200 cursor-pointer p-2 rounded-lg"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chevron-right h-4 w-4" aria-hidden="true">
+                    <path d="m9 18 6-6-6-6"></path>
+                </svg>
+                </svg></button>
+        </div>
+        <div class="px-[20px] mt-[15px] flex flex-col gap-[12px]">
+            <a href="../index.html"
+                class="flex items-center gap-2 group dark:shadow-blue-500/30  rounded-lg py-2 px-1 duration-400 cursor-pointer">
+                <div class="w-8 h-8 fil flex items-center justify-center">
+                    <svg class="stroke-black w-24px h-24px  xmlns=" http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-layout-dashboard h-5 w-5 flex-shrink-0"
+                        aria-hidden="true">
+                        <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                        <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                        <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                        <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+                    </svg>
+                </div>
+                <p class="aside-content-teacher2 hidden md:flex">Dashboard</p>
+            </a>
+            <a href="./teachers.html"
+                class="flex items-center gap-2 group dark:shadow-blue-500/30 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg py-2 px-1 duration-400 cursor-pointer">
+                <div class="w-8 h-8 flex items-center justify-center">
+                    <svg class="" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#ffff">
+                        <path
+                            d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z" />
+                    </svg>
+                </div>
+                <span class="text-[white] aside-content-teacher3 hidden md:flex">Teachers</span>
+            </a>
+            <a href="./students.html"
+                class="flex items-center dark:shadow-blue-500/30 gap-2 group hover:bg-gray-100 rounded-lg py-2 px-1 duration-400 cursor-pointer">
+                <div class="flex items-center justify-center w-8 h-8">
+                    <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-graduation-cap h-5 w-5 flex-shrink-0"
+                        aria-hidden="true">
+                        <path
+                            d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z">
+                        </path>
+                        <path d="M22 10v6"></path>
+                        <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
+                    </svg>
+                </div>
+                <p class="text-gray-800 dark:text-white aside-content-teacher4 hidden md:flex">Students</p>
+            </a>
+            <a href="./settings.html"
+                class="flex items-center dark:shadow-blue-500/30 gap-2 group hover:bg-gray-100 rounded-lg py-2 px-1 duration-400 cursor-pointer">
+                <div class="flex items-center justify-center w-8 h-8">
+                    <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-settings h-5 w-5 flex-shrink-0" aria-hidden="true">
+                        <path
+                            d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915">
+                        </path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </div>
+                <p class="text-gray-800 dark:text-white aside-content-teacher5 hidden md:flex">Settings</p>
+            </a>
+            <button id="button"
+                class="flex sm:hidden bg-[whitesmoke] dark:bg-gray-200 cursor-pointer p-[2.5px] rounded-[50%]">
+                <img src="../assets/header/moon_stars_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+            </button>
+        </div>
+    </aside>
+
+    <main>
+        <div class="pl-[80px] px-[10px] md:pl-[290px] pt-[80px] pb-[20px] sm:pb-[20px] sm:pt-[120px] sm:px-[20px]">
+            <a href="./students.html">
+                <button data-slot="button"
+                    class="inline-flex items-center justify-center group hover:bg-gray-200 cursor-pointer whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 h-9 px-[0px] sm:px-4 py-[0px] sm:py-2 gap-2"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-chevron-left h-4 w-4" aria-hidden="true">
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>Back to Students</button>
+            </a>
+            <div class="flex items-center gap-2">
+                <a class="text-gray-500 text-[14px] sm:text-[16px] dark:text-[white]" href="../index.html">Dashboard
+                    /</a>
+                <a class="text-gray-500 text-[14px] sm:text-[16px] dark:text-[white]" href="./students.html">Students
+                    /</a>
+                <p id="teacher-name">El.name</p>
+            </div>
+            <div class="flex flex-col xl:flex-row xl:justify-between gap-6 mt-[15px] sm:mt-[25px]">
+                <div id="student-data"
+                    class="w-full bg-[white] w-full xl:max-w-[370px] p-2 sm:p-6 rounded-lg border-[1px] border-gray-200">
+
+                </div>
+                <div id="student-data-static"
+                    class="bg-[white] w-full rounded-lg border-[1px] border-gray-200 p-2 sm:p-6 h-[450px]">
+                    <div class="w-full bg-gray-200 rounded-[50px] p-1 flex items-center justify-between gap-2">
+                        <div id="teacher-contact-btn"
+                            class="w-full cursor-pointer bg-[white] flex items-center justify-center rounded-[50px] py-2 h-full">
+                            <p class="font-bold line-clamp-1 text-[11px] sm:text-[16px]">Contact Info</p>
+                        </div>
+                        <div id="teachers-students-btn"
+                            class="w-full flex cursor-pointer items-center justify-center rounded-[50px] py-2 h-full">
+                            <p class="font-bold text-[11px] sm:text-[16px]">Teacher</p>
+                        </div>
+                        <div id="teachers-students-btn"
+                            class="w-full flex cursor-pointer items-center justify-center rounded-[50px] py-2 h-full">
+                            <p class="font-bold text-[11px] sm:text-[16px]">Statistics</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center bg-gray-50 rounded-lg p-3 gap-3 pb-4">
+                            <div class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide lucide-phone h-5 w-5 text-blue-600 dark:text-blue-400"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+                                    </path>
+                                </svg></div>
+                            <div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Phone</p>
+                                <p class="text-gray-900 text-[14px] sm:text-[16px] dark:text-white">${el.phone}</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-700/50">
+                            <div class="flex items-center gap-1.5 sm:gap-3 mb-2">
+                                <div class="p-2 rounded-lg bg-green-100 dark:bg-green-900"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-mail h-5 w-5 text-green-600 dark:text-green-400"
+                                        aria-hidden="true">
+                                        <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                    </svg></div>
+                                <div>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Email</p>
+                                    <p class="text-gray-900 text-[14px] sm:text-[16px] dark:text-white">${el.email}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-700/50">
+                            <div class="flex items-center gap-1.5 sm:gap-3 mb-2">
+                                <div class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-send h-5 w-5 text-blue-400"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z">
+                                        </path>
+                                        <path d="m21.854 2.147-10.94 10.939"></path>
+                                    </svg></div>
+                                <div>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Telegram</p>
+                                    <p class="text-gray-900 text-[14px] sm:text-[16px] dark:text-white">@${el.telegram}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-gray-700/50">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="p-2 rounded-lg bg-blue-100 dark:bg-blue-900"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="lucide lucide-linkedin h-5 w-5 text-blue-600 dark:text-blue-400"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                        </path>
+                                        <rect width="4" height="12" x="2" y="9"></rect>
+                                        <circle cx="4" cy="4" r="2"></circle>
+                                    </svg></div>
+                                <div>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">LinkedIn</p>
+                                    <p class="text-gray-900 dark:text-white text-[14px] sm:text-[16px] truncate">
+                                        ${el.linkedin}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <script src="../Js/teachers.js"></script>
+    <script src="../Js/single.js"></script>
+</body>
+
+</html>

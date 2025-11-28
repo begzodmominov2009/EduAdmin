@@ -30,7 +30,7 @@ async function getSingleDatas(id) {
         let res2 = await axios.get(`https://69208abe31e684d7bfcd6e40.mockapi.io/Teachers/${id}/Students`)
         let e = res2.data
         let el = res.data
-                
+
         studentsNumber.textContent = e.length
         teacherName.textContent = el.firstName
         loadingTeacherSingle.classList.add("hidden")
@@ -192,4 +192,3 @@ async function getSingleDatas(id) {
 
     }
 }
-getSingleDatas(id)

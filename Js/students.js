@@ -132,7 +132,7 @@ async function getDataStudents(content) {
                             </svg>
                             <p class="font-bold text-[14px]">Edit</p>
                         </div>
-                        <div
+                        <div onClick="deletStudents(${el.id})"
                             class="flex items-center py-0.5 w-full gap-2 bg-[white] group cursor-pointer hover:bg-gray-200 border-1 border-gray-300 rounded-lg flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="red" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -192,3 +192,14 @@ asideToggleStudents2.addEventListener("click", () => {
     asideToggleStudents.classList.remove("hidden", "duration-400")
     asideToggleStudents2.classList.add("hidden", "duration-400")
 })
+
+async function deletStudents(id) {
+    try {
+        await axios.delete(`https://69208abe31e684d7bfcd6e40.mockapi.io/Students/${id}`)
+        getDataStudents(studentsCard)
+    } catch (err) {
+        console.log(err);
+
+    }
+    getDataStudents(studentsCard)
+}
